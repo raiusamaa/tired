@@ -80,6 +80,18 @@ userSchema.virtual('Invites' ,
     id:"_id"
 })
 
+userSchema.virtual('Badge').get( function () 
+{
+
+    if ( this.stars>=25000 ) { return 'Silver' }
+    else if ( this.stars>=40000 ) { return "Ruby" }
+    else if ( this.stars>=50000 ) { return "Golden" }
+    else if ( this.stars>=60000 ) { return "Diamond" }
+    else if ( this.stars>=65000 ) { return "Sapphire" }
+    else if ( this.stars>=70000 ) { return "Platinum" }
+    else if ( this.stars>=100000 ) { return "Eternal" }
+} )
+
 
 const users= mongoose.model('Users',userSchema);
 export default users;
