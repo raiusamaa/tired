@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const eventSchema = new mongoose.Schema ({
-    userId: {
+    name: {
         type: String
     },
     description: {
@@ -10,15 +10,23 @@ const eventSchema = new mongoose.Schema ({
         type:String
     },
     date: {
-        type: String
+        type: Date
     },
-    interested: {
-        type: Number
+    hobby: {
+        enum: ["Hiking","Traveling","Blogging","Writing","Reading","Netflix"]
     },
-    going : {
-        type: Number
+    interested:{
+        type: Array,
+        default: []
+    },
+    communityRef:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'community'
+    },
+    userRef:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'user'
     }
-    
 },
     {
         timestamps:true
