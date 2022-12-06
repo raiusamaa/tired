@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate, BrowserRouter, HashRouter } from 'react-router-dom';
+import Signupform from './pages/Signup';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard'
+import Home from './pages/home/home';
+import Profile from "./pages/Profile/Profile"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+      <BrowserRouter>
+        <div>
+          <main>
+            <Routes>  
+              <Route path="/" element={<Signupform/>} />
+              <Route path="/Login" element={<Login/>} />
+              <Route path="/Home" element={<Home/>} />
+              <Route path="/Profile" element={<Profile/>} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
+  )}
 
-export default App;
+export default App
+ 

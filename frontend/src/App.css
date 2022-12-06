@@ -33,6 +33,167 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(10deg);
   }
 }
+
+/* Signup Form */
+.SignupForm {
+  /* background-color: black;
+  padding:30px;
+  left:150px;
+
+  width: 50%; */
+}
+.form {
+  text-align: left;
+  padding: 50px;
+  position: relative;
+  width: 100px;
+  left: 70%;
+  top: 20px;
+}
+#name {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#name:hover
+{
+  background-color:  rgb(141, 195, 240);
+}
+#Name
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+#profession {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#profession:hover
+{
+  background-color:  rgb(141, 195, 240);
+}
+#Profession
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#email {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#email:hover{
+  background-color:  rgb(141, 195, 240);
+}
+#Email
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#password {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#password:hover
+{
+  background-color:  rgb(141, 195, 240);
+}
+#Password
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#city {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#city:hover{
+  background-color:  rgb(141, 195, 240);
+}
+#City
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#relationship {
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+#relationship:hover
+{
+  background-color:  rgb(141, 195, 240);
+}
+#Relation
+{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#signupheader {
+  padding: 0%;
+  position: absolute;
+  left: 1px;
+  height: 100%;
+  top: 0%;
+  background-color: rgb(41, 177, 222);
+}
+#VeteranMax {
+  position: relative;
+  left: 30%;
+}
+#SignupButton
+{
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 100px;
+  border-radius: 30px;
+  margin-left: 25px;
+  top:30px;
+  
+  background-color: orange;
+  height: 50px;
+  text-decoration: none;
+  border: none;
+}
+#logininstead
+{
+  border: none;
+  background-color: white;
+  position: relative;
+  top: -45px;
+  color: blue;
+  text-decoration: underline;
+}
+/* #LoginButton
+{
+  position: relative;
+  top:40px;
+  font-size: 12px;
+  padding: 10px;
+
+
+} */
+

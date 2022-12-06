@@ -1,0 +1,39 @@
+.Profile
+{
+   flex: 5;
+}
+.profileWrapper
+{
+  padding: 20px;
+}
+.title
+{
+    text-align: center;
+    color: rgb(5, 93, 122);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#name
+{
+    margin-left: 70px;
+    margin-bottom: 15px;
+}
+#profession
+{
+    margin-left: 38px;
+    margin-bottom: 15px;
+}
+#relationship
+{
+    margin-left:25px;
+}
+#hobbies
+{
+    margin-left: 50px;
+    margin-bottom: 15px;
+    width: 200px;
+    background-color: rgb(214, 225, 234);
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+
+}
