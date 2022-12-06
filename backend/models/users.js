@@ -21,7 +21,6 @@ const userSchema = new mongoose.Schema ({
     },
     hobbies: {
         type: String,
-        enum: ["Hiking","Traveling","Blogging","Writing","Reading","Netflix"]
     },
     relationship: {
         type: String
@@ -82,7 +81,6 @@ userSchema.virtual('Invites' ,
 
 userSchema.virtual('Badge').get( function () 
 {
-
     if ( this.stars>=25000 ) { return 'Silver' }
     else if ( this.stars>=40000 ) { return "Ruby" }
     else if ( this.stars>=50000 ) { return "Golden" }
@@ -91,7 +89,6 @@ userSchema.virtual('Badge').get( function ()
     else if ( this.stars>=70000 ) { return "Platinum" }
     else if ( this.stars>=100000 ) { return "Eternal" }
 } )
-
 
 const users= mongoose.model('Users',userSchema);
 export default users;
