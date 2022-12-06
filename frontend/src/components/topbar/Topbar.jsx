@@ -1,6 +1,5 @@
 import "./topbar.css"
 import {useNavigate } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
 
 export default function Topbar(props) {
   const navigate=useNavigate()
