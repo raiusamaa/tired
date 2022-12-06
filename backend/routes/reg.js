@@ -4,6 +4,7 @@ const router= Express.Router()
 
 router.post('/register', async (req,res) => {
     const user= new users ({
+        name: req.body.name,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
@@ -36,10 +37,5 @@ router.post('/login', async(req,res) => {
     }
 })
 
-// router.put ('/updateProfile', async (req,res) => {
-//     try{
-//         const user=await users.findByIdAndUpdate
-//     }
-// })
 
 export default router

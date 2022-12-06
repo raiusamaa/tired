@@ -13,7 +13,7 @@ const eventSchema = new mongoose.Schema ({
         type: Date
     },
     hobby: {
-        enum: ["Hiking","Traveling","Blogging","Writing","Reading","Netflix"]
+        type:String
     },
     interested:{
         type: Array,
@@ -33,5 +33,5 @@ const eventSchema = new mongoose.Schema ({
     }
 );
 
-const Posts= mongoose.model('Posts',postSchema);
-export default Posts;
+const Event= mongoose.model('Events',eventSchema);
+export default Event;
