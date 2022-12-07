@@ -64,9 +64,33 @@ export const Users = [
     {
       id: 5,
       photo: "assets/5.jpg",
-      date: "5 hours ago",
+      date: "7 hours ago",
       userId: 5,
       like: 23,
       comment: 5,
     },
+    {
+      id: 6,
+      photo: "assets/5.jpg",
+      date: "12 hours ago",
+      userId: 5,
+      like: 23,
+      comment: 5,
+    },
+    
+    
+  ];
+
+  export const ABC =[
+
+    {
+      id:1,
+      a: "zero"
+    },
+    {
+      id:2,
+      a: "one"
+    },
+
+
   ];

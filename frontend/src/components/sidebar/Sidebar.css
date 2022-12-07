@@ -27,7 +27,12 @@
 }
 .sidebarListItemText
 {
-    margin-left: 10px;
+    margin-left: 6px;
+    border: none;
+    background-color: rgb(206, 228, 236);
+    font-weight:200;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .sidebarList

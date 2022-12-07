@@ -1,8 +1,30 @@
 import React from 'react';
 import './Sidebar.css';
+import Axios from 'axios'
 import {Users} from "../../dummyData"
-
+import {useNavigate } from 'react-router-dom';
 export default function Sidebar() {
+
+  const navigate=useNavigate();
+
+  const submitHandler = async (e) =>
+  {
+    e.preventDefault();
+    try{
+
+      const { data } = await Axios.post('http://localhost:5000/api/auth/login',
+        {
+         
+        });
+      localStorage.setItem("user",JSON.stringify(data));
+      navigate('/Events')
+    }
+    catch(err)
+      {
+        console.log(err)
+       alert("Something Went Wrong!")
+      }
+  }
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -11,22 +33,27 @@ export default function Sidebar() {
         />
           <li className="sidebarListItem">
           <i class="fa fa-home fa-2x" ></i>
-            <span className="sidebarListItemText">Home</span>
+          <button className='sidebarListItemText' >Home</button>
+          
           </li>
 
           <li className="sidebarListItem">
           <i class="fa fa-object-group fa-2x" ></i>
-            <span className="sidebarListItemText">Communities</span>
+          <button className='sidebarListItemText'>Communities</button>
+            
           </li>
 
           <li className="sidebarListItem">
           <i class="fa fa-calendar-check-o fa-2x" ></i>
-            <span className="sidebarListItemText">Events</span>
+          <button onClick={() => navigate('/Events')} className='sidebarListItemText'>Events</button>
+           
           </li>
 
           <li className="sidebarListItem">
           <i class="fa fa-map-marker fa-2x" ></i>
-            <span className="sidebarListItemText">Location</span>
+          <button className='sidebarListItemText'>Location</button>
+           
+
           </li>
         </ul>
         <button className="sidebarButton">Show More</button>
