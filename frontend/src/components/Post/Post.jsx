@@ -10,7 +10,8 @@ export default function Post({ post }) {
     const [img,setImg]= useState("");
   }
 
-  const onChangeFile = e => {
+  //thenewfrontend
+  const onChangeFilee = e => {
     setImg(e.target.file[0]);
   }
 
