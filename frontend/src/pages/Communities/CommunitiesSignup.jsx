@@ -104,16 +104,13 @@ const CommunitiesSignup = () => {
         />
 
         <div className="dropdown">
-          {/* <label htmlFor="type" id="type">
-          Type Of Profile
-          </label> */}
+         
           <button className="dropdownButton">Type Of Profile</button>
           <div class="dropdown-content">
             <Link to="#">Organization</Link>
             <Link to="#">NGO</Link>
             <Link to="#">Educational Institue</Link>
-            {/* <a href="#">Link 2</a>
-            <a href="#">Link 3</a> */}
+           
           </div>
         </div>
 
