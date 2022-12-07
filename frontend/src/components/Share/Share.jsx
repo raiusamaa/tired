@@ -6,6 +6,11 @@ import { useNavigate } from 'react-router-dom';
 export default function Share() {
   const [text, setText] = useState('');
   const navigate = useNavigate();
+
+  
+  
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -24,6 +29,10 @@ export default function Share() {
       alert('Something Went Wrong!');
     }
   };
+  const fileSelectedHandler = (event) =>
+  {
+    console.log(event.target)
+  }
 
   return (
     <div className="share">
@@ -41,22 +50,31 @@ export default function Share() {
         <hr className="shareHr"></hr>
         <div className="shareBottom">
           <div className="shareOptions">
+
             <div className="shareOption">
-              <i class="fa fa-camera fa-1x"></i>
-              <span className="shareOptionText">Multimedia</span>
+            <input type="file" className="chooseFile" ></input>
+            <i class="fa fa-camera fa-1x"></i>
+            <span type="file" className="shareOptionText">Multimedia</span>
+              
+              
+             
             </div>
+
             <div className="shareOption">
               <i class="fa fa-tags fa-1x"></i>
               <span className="shareOptionText">Tag</span>
             </div>
+
             <div className="shareOption">
               <i class="fa fa-smile-o fa-1x"></i>
               <span className="shareOptionText">Emoji</span>
             </div>
+
             <div className="shareOption">
               <i class="fa fa-music fa-1x"></i>
               <span className="shareOptionText">Music</span>
             </div>
+
           </div>
           <button className="shareButton">Share</button>
         </div>
