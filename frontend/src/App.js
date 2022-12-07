@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard'
 import Home from './pages/home/home';
 import Profile from "./pages/Profile/Profile"
+import CommunitiesSignup from "./pages/Communities/CommunitiesSignup"
+import Signup from './pages/Signup';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
               <Route path="/Login" element={<Login/>} />
               <Route path="/Home" element={<Home/>} />
               <Route path="/Profile" element={<Profile/>} />
+              <Route path="/CommunitiesSignup" element={<CommunitiesSignup/>} />
+              <Route path="/VeteranSignup" element={<Signupform/>} />
             </Routes>
           </main>
         </div>

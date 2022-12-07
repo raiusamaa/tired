@@ -8,7 +8,7 @@
 }
 .title
 {
-    text-align: center;
+   margin-left: 45%;
     color: rgb(5, 93, 122);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -36,4 +36,15 @@
     border: none;
     border-radius: 10px;
 
+}
+.saveChanges
+{
+  border: none;
+  padding:15px;
+  border-radius: 30px;
+   
+   
+    background-color: rgb(75, 208, 234);
+    margin-left: 150px;
+    cursor: pointer;
 }

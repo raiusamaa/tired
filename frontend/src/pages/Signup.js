@@ -12,6 +12,7 @@ const Signup = () =>
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [relationship, setRelationship] = useState('');
+  const [hobby, setHobby] = useState('');
 
   const navigate=useNavigate()
 
@@ -28,7 +29,8 @@ const Signup = () =>
       profession,
       name,
       city,
-      relationship
+      relationship,
+      hobby
     });
 
     if(data.message == 'Invalid Credentials') {
@@ -37,6 +39,8 @@ const Signup = () =>
     }
     localStorage.setItem("user",JSON.stringify(data));
     navigate('/Login');
+    navigate('/CommunitiesSignup')
+    navigate('/VeteranSignup')
   }
   catch(err)
   {
@@ -50,6 +54,16 @@ const Signup = () =>
         <img src={socialmedia} id="signupheader" alt="SocialMedia Header" />
         <h1 id="VeteranMax">VeteranMax</h1>
         <div className="form">
+        <div className="slide-controls">
+           
+          <input onClick={() => navigate('/CommunitiesSignup')} type="radio" name="slide" id="login" checked />
+          <input  onClick={() => navigate('/VeteranSignup')}  type="radio" name="slide" id="signup" checked/>
+          <label for="login" class="slide login">Communities</label>
+          <label for="signup" class="slide signup">Veteran</label>
+          <div class="slider-tab">
+
+          </div>
+        </div>
           <h2> SIGN UP </h2>
           <label htmlFor="name" id="Name">
             Name
@@ -93,8 +107,23 @@ const Signup = () =>
           onChange={(e) => 
             setRelationship(e.target.value)}
           />
+
+           <label htmlFor="hobby" id="Hobby">
+           Hobbies
+          </label>
+          <input value={hobby} type="hobby" id="hobby" 
+          onChange={(e) => 
+            setRelationship(e.target.value)}
+          />
+
+
+
+
+
+
+
           <button onClick={() => navigate('/Login')} id='SignupButton'>Signup</button>
-          {/* <button onClick={submitHandler} id='SignupButton'>Signup</button> */}
+         
           <button onClick={() => navigate('/Login')} id="logininstead">Login instead?</button>
         </div>
         </div>
