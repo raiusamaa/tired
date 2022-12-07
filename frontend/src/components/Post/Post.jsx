@@ -1,7 +1,32 @@
 import React from 'react';
 import './post.css';
 import { Users } from '../../dummyData';
+import { useState } from 'react';
 export default function Post({ post }) {
+  const addPost = () => {
+    const [name,setName]= useState("");
+    const [description,setDescription]= useState("");
+    const [author,setAuthor]= useState("");
+    const [img,setImg]= useState("");
+  }
+
+  const onChangeFile = e => {
+    setImg(e.target.file[0]);
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  }
+
+  const formData= new FormData ();
+  formData.append('name',name);
+  formData.append('description',description);
+  formData.append('author',author);
+  formData.append('img',img);
+
+  setName("");
+  setDescription("");
+  setAuthor("");
   return (
     <div className="post">
       <div className="postWrapper">

@@ -1,25 +1,25 @@
 import mongoose from "mongoose";
 const postSchema = new mongoose.Schema ({
-    userId: {
+    name: {
         type: String
     },
     description: {
         type: String
     },
+    author: {
+        type: String
+    },
     img: {
         type:String
     },
-    likes: {
-        type: Array,
-        default:[]
-    },
-    likecount: {
-        type: Number
-    },
-    user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "user"
+    date: {
+        type: Date,
+        default: Date.now()
     }
+    // user: {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: "user"
+    // }
 },
     {
         timestamps:true

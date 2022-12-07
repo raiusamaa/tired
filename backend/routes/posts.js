@@ -1,8 +1,33 @@
 import Express from "express";
 import Post from '../models/post.js'
+import multer from 'multer'
 const router= Express.Router()
 
+const storage= multer.diskStorage( {
+  destination: (req, file, callback) => {
+    callback(null, './frontend/posts/')
+  },
+  filename: (req,file,callback) => {
+    callback(null, file.originalname); //origname is name of file
+
+  }
+})
+
+const uploads = multer({
+  storage: storage
+});
+
 //create
+
+router.post ('/upload', uploads.single('User Post'), (req,res) => {
+  const newPost= new Post ({
+    name: req.body.name,
+    description: req.body.description,
+    author: req.body.author,
+    img: req.body.img,
+    date: req.body.date
+  })
+})
 
 router.post('/',async (req,res) => {
     const newPost=new Post (req.body)
