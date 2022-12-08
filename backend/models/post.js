@@ -1,25 +1,26 @@
 import mongoose from "mongoose";
 const postSchema = new mongoose.Schema ({
-    name: {
-        type: String
-    },
+    // name: {
+    //     type: String
+    // },
     description: {
         type: String
     },
-    // author: {
-    //     type: String
-    // },
     img: {
-        type:String
+        type:String,
     },
     date: {
         type: Date,
         default: Date.now()
-    }
+    },
     // user: {
     //     type: mongoose.Schema.ObjectId,
     //     ref: "user"
     // }
+   
+},
+{
+    timestamps: true
 }
 );
 

@@ -1,38 +1,25 @@
 import Express from "express";
 import Post from '../models/post.js'
 import multer from 'multer'
+import path from 'path'
+import bodyparser from 'body-parser'
 const router= Express.Router()
-
-// const storage= multer.diskStorage( {
-//   destination: (req, file, callback) => {
-//     callback(null, './frontend/posts/')
-//   },
-//   filename: (req,file,callback) => {
-//     callback(null, file.originalname); //origname is name of file
-//   }
-// })
-
-// const uploads = multer({
-//   storage: storage
-// });
-
 //create
 
 router.post ('/add', async (req,res) => {
-  const newPost= new Post ({
-    name: req.body.name,
+  console.log(req.body.img)
+  let result = new Post({
     description: req.body.description,
     img: req.body.img
   })
-  console.log('called')
-  newPost.save()
-  .then (response => 
-    {
-        res.json({message: 'V Added'})
-    })
-    .catch (error =>{
-        res.json({message: 'Error'})
-    })
+  result.save();
+  //result.save();
+  // if (result) {
+  //   res.send({code: 200, message: 'done'})
+  // }
+  // else {
+  //   res.send({code: 500, message: 'no'})
+  // }
 })
 
 router.post('/',async (req,res) => {
@@ -97,9 +84,4 @@ router.get("/timeline/all", async (req, res) => {
       res.status(500).json(err);
     }
   });
-
-router.get('/allposts', (req,res) => {
-  
-})
-
 export default router
