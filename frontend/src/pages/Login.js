@@ -30,18 +30,29 @@ const Login = (props) => {
       }
 }
 return (
+  
+  
+
     <div className="LoginForm">
+      <h1 className="loginTitle">Login</h1>
       <img src={icon} id="icon"/>
-        <label htmlFor="email">Email</label>
-        <input value={email} type="email" placeholder="name@gmail.com" id="email"
+      
+        <label htmlFor="email" id="loginEmail">Email</label>
+        <input value={email} type="email" placeholder="name@gmail.com" id="loginemail"
          onChange={(e) => 
           setEmail(e.target.value)}/>
 
-        <label htmlFor="password">Password</label>
-        <input value={password} type="password" placeholder="*****" id="password"
+        <label htmlFor="password" id="loginPassword">Password</label>
+        <input value={password} type="password" placeholder="*****" id="loginpassword"
          onChange={(e) => 
           setPass(e.target.value)}/>
-          <button onClick={() => navigate('/Home')} id='SignupButton'>Login</button>
+         
+          <button onClick={() => navigate('/Home')} className='LoginButton'>Login</button>
+          <hr className="loginHr1"></hr>
+          <hr className="loginHr2"></hr>
+          <hr className="loginHr3"></hr>
+          <hr className="loginHr4"></hr>
+         
     </div>
 
   )

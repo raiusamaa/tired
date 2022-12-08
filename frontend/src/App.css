@@ -37,20 +37,26 @@
   }
 }
 
-.slide-controls
-{
+.signupTitle {
+  position: relative;
+  bottom: 200px;
+  text-align: center;
+  left: 60px;
+}
+.slide-controls {
   position: relative;
   display: flex;
   height: 50px;
   width: 250px;
+  bottom: 70px;
   overflow: hidden;
   margin: 30px 0 10px 0;
   justify-content: space-between;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  border:none;
+  border: none;
 }
-.slide-controls .slide{
+.slide-controls .slide {
   height: 100%;
   width: 100%;
   color: #fff;
@@ -63,37 +69,37 @@
   transition: all 0.6s ease;
 }
 
-.slide-controls label.signup{
+.slide-controls label.signup {
   color: #000;
 }
-.slide-controls .slider-tab{
+.slide-controls .slider-tab {
   position: absolute;
   height: 100%;
   width: 50%;
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left,rgb(141, 195, 240), #fa4299);
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  background: -webkit-linear-gradient(left, rgb(141, 195, 240), #fa4299);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-input[type="radio"]{
+input[type='radio'] {
   display: none;
 }
-#signup:checked ~ .slider-tab{
+#signup:checked ~ .slider-tab {
   left: 50%;
 }
-#signup:checked ~ label.signup{
+#signup:checked ~ label.signup {
   color: #fff;
   cursor: default;
   user-select: none;
 }
-#signup:checked ~ label.login{
+#signup:checked ~ label.login {
   color: #000;
 }
-#login:checked ~ label.signup{
+#login:checked ~ label.signup {
   color: #000;
 }
-#login:checked ~ label.login{
+#login:checked ~ label.login {
   cursor: default;
   user-select: none;
 }
@@ -103,7 +109,7 @@ input[type="radio"]{
   position: relative;
   width: 100px;
   left: 70%;
-  top: 20px;
+  bottom: 30px;
 }
 #name {
   width: 200px;
@@ -112,16 +118,18 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 89px;
+  right: 72px;
 }
-#name:hover
-{
-  background-color:  rgb(141, 195, 240);
+#name:hover {
+  background-color: rgb(141, 195, 240);
 }
-#Name
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#Name {
+  position: relative;
+  bottom: 90px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 
 #profession {
   width: 200px;
@@ -130,14 +138,17 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 89px;
+  right: 39px;
 }
-#profession:hover
-{
-  background-color:  rgb(141, 195, 240);
+#profession:hover {
+  background-color: rgb(141, 195, 240);
 }
-#Profession
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#Profession {
+  position: relative;
+  bottom: 90px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #email {
@@ -147,13 +158,17 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 89px;
+  right: 1px;
 }
-#email:hover{
-  background-color:  rgb(141, 195, 240);
+#email:hover {
+  background-color: rgb(141, 195, 240);
 }
-#Email
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#Email {
+  position: relative;
+  bottom: 90px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #password {
   width: 200px;
@@ -162,14 +177,18 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 69px;
+  right: 1px;
 }
-#password:hover
-{
-  background-color:  rgb(141, 195, 240);
+#password:hover {
+  background-color: rgb(141, 195, 240);
 }
-#Password
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#Password {
+  position: relative;
+  bottom: 77px;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #city {
   width: 200px;
@@ -178,13 +197,17 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 53px;
+  right: 1px;
 }
-#city:hover{
-  background-color:  rgb(141, 195, 240);
+#city:hover {
+  background-color: rgb(141, 195, 240);
 }
-#City
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#City {
+  position: relative;
+  bottom: 55px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #relationship {
   width: 200px;
@@ -193,23 +216,36 @@ input[type="radio"]{
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 35px;
+  right: 25px;
 }
-#relationship:hover
-{
-  background-color:  rgb(141, 195, 240);
+#relationship:hover {
+  background-color: rgb(141, 195, 240);
 }
-#Relation
-{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#Relation {
+  position: relative;
+  bottom: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#hobby
-{
+#Hobby {
+  position: relative;
+  bottom: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#hobby {
   width: 200px;
   background-color: rgb(214, 225, 234);
   height: 30px;
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  position: relative;
+  bottom: 25px;
+  right: 1px;
+}
+#hobby:hover {
+  background-color: rgb(141, 195, 240);
 }
 #signupheader {
   padding: 0%;
@@ -223,8 +259,7 @@ input[type="radio"]{
   position: relative;
   left: 30%;
 }
-#SignupButton
-{
+#SignupButton {
   position: relative;
   width: 100%;
   padding: 10px;
@@ -232,29 +267,131 @@ input[type="radio"]{
   padding-right: 100px;
   border-radius: 30px;
   margin-left: 25px;
-  top:30px;
-  
+  top: 30px;
+
   background-color: orange;
   height: 50px;
   text-decoration: none;
   border: none;
 }
-#logininstead
-{
+#logininstead {
   border: none;
   background-color: white;
   position: relative;
-  top: -45px;
+  top: -65px;
   color: blue;
   text-decoration: underline;
 }
-/* #LoginButton
+
+#loginEmail
 {
   position: relative;
-  top:40px;
-  font-size: 12px;
-  padding: 10px;
+  bottom: 400px;
+  left: 450px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+}
+#loginemail
+{
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+  position: relative;
+  bottom: 359px;
+  right: -410px;
+}
+#loginemail:hover
+{
+  background-color: rgb(141, 195, 240);
+}
+#loginPassword
+{
+  position: relative;
+  bottom: 300px;
+  left: 210px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#loginpassword
+{
+  width: 200px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+  position: relative;
+  bottom: 259px;
+  right: -140px;
+  
+}
+#loginpassword:hover
+{
+  background-color: rgb(141, 195, 240);
+}
+.LoginButton
+{
+  background-color: orange;
+  padding: 15px;
+  width: 5%;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  bottom: 200px;
+  right: px;  
+}
+.loginTitle
+{
+  position: relative;
+  text-align: center;
+  left: 400px;
+  top: 150px;
+}
+.loginHr1
+{
+  position: relative;
+  bottom: 570px;
+  border: none;
+  height: 12px;
+  left: 400px;
+  width:30%;
+  background: orange;
+  margin-bottom: 50px;
+}
+.loginHr2
+{
+  position: relative;
+  bottom: 220px;
+  border: none;
+  height: 12px;
+  left: 400px;
+  width:30%;
+  background: orange;
+  margin-bottom: 50px;
+}
+.loginHr3
+{
+  position: relative;
+  bottom: 694px;
+  border: none;
+  height: 424px;
+  left: 180px;
+  width:1%;
+  background: orange;
+  margin-bottom: 50px;
+}
+.loginHr4
+{
+  position: relative;
+  bottom: 1168px;
+  border: none;
+  height: 424px;
+  left: 630px;
+  width:1%;
+  background: orange;
+  margin-bottom: 50px;
 
-} */
+}
 
