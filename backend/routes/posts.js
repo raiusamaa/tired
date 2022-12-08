@@ -3,30 +3,30 @@ import Post from '../models/post.js'
 import multer from 'multer'
 const router= Express.Router()
 
-const storage= multer.diskStorage( {
-  destination: (req, file, callback) => {
-    callback(null, './frontend/posts/')
-  },
-  filename: (req,file,callback) => {
-    callback(null, file.originalname); //origname is name of file
+// const storage= multer.diskStorage( {
+//   destination: (req, file, callback) => {
+//     callback(null, './frontend/posts/')
+//   },
+//   filename: (req,file,callback) => {
+//     callback(null, file.originalname); //origname is name of file
+//   }
+// })
 
-  }
-})
-
-const uploads = multer({
-  storage: storage
-});
+// const uploads = multer({
+//   storage: storage
+// });
 
 //create
 
-router.post ('/upload', uploads.single('User Post'), (req,res) => {
+router.post ('/add', (req,res) => {
   const newPost= new Post ({
-    name: req.body.name,
+    // name: req.body.name,
     description: req.body.description,
-    author: req.body.author,
-    img: req.body.img,
-    date: req.body.date
+    // author: req.body.author,
+    img: req.body.img
   })
+  console.log('called')
+  newPost.save();
 })
 
 router.post('/',async (req,res) => {
@@ -91,5 +91,9 @@ router.get("/timeline/all", async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+router.get('/allposts', (req,res) => {
+  
+})
 
 export default router

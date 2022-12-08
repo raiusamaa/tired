@@ -19,14 +19,14 @@ const eventSchema = new mongoose.Schema ({
         type: Array,
         default: []
     },
-    communityRef:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'community'
-    },
-    userRef:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'user'
-    }
+    // communityRef:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref:'community'
+    // },
+    // userRef:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref:'user'
+    // }
 },
     {
         timestamps:true

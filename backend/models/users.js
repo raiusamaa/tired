@@ -61,23 +61,23 @@ const userSchema = new mongoose.Schema ({
     }
 );
 
-userSchema.virtual('Posts' ,
-{
-    ref:"Posts",
-    id:"_id"
-})
+// userSchema.virtual('Posts' ,
+// {
+//     ref:"Posts",
+//     id:"_id"
+// })
 
-userSchema.virtual('Events' ,
-{
-    ref:"Events",
-    id:"_id"
-})
+// userSchema.virtual('Events' ,
+// {
+//     ref:"Events",
+//     id:"_id"
+// })
 
-userSchema.virtual('Invites' ,
-{
-    ref:"Invites",
-    id:"_id"
-})
+// userSchema.virtual('Invites' ,
+// {
+//     ref:"Invites",
+//     id:"_id"
+// })
 
 const users= mongoose.model('Users',userSchema);
 export default users;

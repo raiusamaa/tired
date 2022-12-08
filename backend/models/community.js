@@ -22,11 +22,5 @@ const community = new mongoose.Schema ({
     }
 });
 
-community.virtual('events',
-{
-    name:"Event",
-    id:"_id"
-});
-
 const Community= mongoose.model('Community',community);
 export default Community;
