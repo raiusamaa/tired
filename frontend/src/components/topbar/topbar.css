@@ -76,3 +76,8 @@
     margin-right: 20px;
     cursor: pointer;
 }
+#starIcon
+{
+    color: yellow;
+    font-size: 1.5em;
+}

@@ -56,7 +56,7 @@ const Signup = () =>
         <div className="form">
         <div className="slide-controls">
            
-          <input onClick={() => navigate('/CommunitiesSignup')} type="radio" name="slide" id="login" checked />
+          <input onClick={() => navigate('/CommunitiesSignup')} type="radio" name="slide" id="login"  />
           <input  onClick={() => navigate('/VeteranSignup')}  type="radio" name="slide" id="signup" checked/>
           <label for="login" class="slide login">Communities</label>
           <label for="signup" class="slide signup">Veteran</label>
@@ -64,7 +64,7 @@ const Signup = () =>
 
           </div>
         </div>
-          <h2> SIGN UP </h2>
+          <h2 className='signupTitle'>SIGNUP </h2>
           <label htmlFor="name" id="Name">
             Name
           </label>

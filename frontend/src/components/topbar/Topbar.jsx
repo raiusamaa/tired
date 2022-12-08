@@ -22,6 +22,7 @@ export default function Topbar(props) {
         <img className="VLogo" src="/assets/v.gif" alt="" />
         <span className="logo">VeteranMeet</span>
       </div>
+
       <div className="topbarCenter">
         <div className="searchbar">
         
@@ -29,12 +30,16 @@ export default function Topbar(props) {
           
         </div>
       </div>
+
      <div className="topbarRight">
         <div className="topbarLinks">
-        <i class="fa fa-home fa-1x" ></i>
+        <i class="fa fa-home fa-1x" id="homeIcon" ></i>
           <span className="topbarLink">Home</span>
           <i class="fa fa-clock-o fa-1x" ></i>
           <span className="topbarLink">Timeline</span>
+          
+          <i class="fa fa-star fa-1x" id="starIcon"></i>
+          <span className="topbarLink">12</span>
         </div>
         <div className="topbarIcons">
          
