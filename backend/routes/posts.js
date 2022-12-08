@@ -18,15 +18,21 @@ const router= Express.Router()
 
 //create
 
-router.post ('/add', (req,res) => {
+router.post ('/add', async (req,res) => {
   const newPost= new Post ({
-    // name: req.body.name,
+    name: req.body.name,
     description: req.body.description,
-    // author: req.body.author,
     img: req.body.img
   })
   console.log('called')
-  newPost.save();
+  newPost.save()
+  .then (response => 
+    {
+        res.json({message: 'V Added'})
+    })
+    .catch (error =>{
+        res.json({message: 'Error'})
+    })
 })
 
 router.post('/',async (req,res) => {

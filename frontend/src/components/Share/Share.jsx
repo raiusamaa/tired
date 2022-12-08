@@ -8,37 +8,28 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { storage } from '../Share/firebase.js'
 import { ref, uploadBytes, listAll } from 'firebase/storage';
-import cloudinary from 'cloudinary.v2'
 import {v4} from 'uuid'
 const Share = () =>  {
-
-  // cloudinary.config({
-  //   cloud_name: 'dfv6xvffi',
-  //   api_key: '329128548112354',
-  //   api_secret: 'J07psZlC7nqL5-vARovuUR1LRbg'
-
-  // });
 
     const [name,setName]= useState("");
     const [description,setDescription]= useState("");
     const [author,setAuthor]= useState("");
-    const [image,setImage]=useState("");
+    const [imageUpload,setImageUpload]=useState("");
     const [imageList, setImageList] = useState([]);
-
-
-    const uploadImg = (e) => 
-    {
+    const uploadImg = (e) => {
       e.preventDefault();
-      if (imageUpload == null) return;
+      if (imageUpload === null) return;
       const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
-      uploadBytes(imageRef, image).then (() => {
+      uploadBytes(imageRef, imageUpload).then (() => {
+        setName=sessionStorage.getItem("email");
         alert('Uploaded');
-        let mylink= imageRef.fullPath
+        setAuthor=imageRef.fullPath;
       })
-      Axios.post('http://localhost:5000/api/posts/add', 
+      Axios.post('c', 
       {
+        name,
         description,
-        mylink
+        author
       })
     };
 
@@ -97,7 +88,7 @@ const Share = () =>  {
              className="shareInput"
              onChange={(e) => setDescription(e.target.value)}/>
          </div>
-         <input type="file" className="chooseFile" onChange={(e) => {setImage(e.target.files[0])}}/>
+         <input type="file" className="chooseFile" onChange={(e) => {setImageUpload(e.target.files[0])}}/>
       </div>
       </div>
       <button onClick={uploadImg}>Submit</button>

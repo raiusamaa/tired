@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 const postSchema = new mongoose.Schema ({
-    // name: {
-    //     type: String
-    // },
+    name: {
+        type: String
+    },
     description: {
         type: String
     },
@@ -20,10 +20,7 @@ const postSchema = new mongoose.Schema ({
     //     type: mongoose.Schema.ObjectId,
     //     ref: "user"
     // }
-},
-    {
-        timestamps:true
-    }
+}
 );
 
 const Posts= mongoose.model('Posts',postSchema);
