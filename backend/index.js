@@ -7,6 +7,7 @@ import cors from 'cors';
 import reg from './routes/reg.js'
 import use from './routes/users.js'
 import post from './routes/posts.js'
+import bodyParser from 'body-parser'
 mongoose.connect("mongodb://127.0.0.1:27017/SocialMedia");
 
 const corsOptions ={
@@ -16,6 +17,9 @@ const corsOptions ={
  }
 
 const app=Express();
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(Express.static('public')) 
 app.use(cors(corsOptions))
 app.use(Express.json());
 app.use(helmet());

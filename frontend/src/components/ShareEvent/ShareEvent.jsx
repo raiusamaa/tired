@@ -2,7 +2,8 @@ import React from 'react';
 import './shareevent.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate, Link } from 'react-router-dom';
-export default function ShareEvent() {
+export default function ShareEvent() 
+{
   return (
     <div className="shareevent">
       <div className="shareeventWrapper">
@@ -25,25 +26,24 @@ export default function ShareEvent() {
       </div>
 
       <hr className="shareventHr"></hr>
-      <div className="shareeventBottom">
+     <div className="shareeventBottom">
         <div className="shareeventOptions">
           <div className="shareeventOption">
-            <Dropdown>
+             <Dropdown>
               <button className="inviteButton">Invite</button>
               <div class="dropdown-content">
                 {/* Followers List */}
                 <Link to="#">Organization</Link>
-                <Link to="#">NGO</Link>
-                <Link to="#">Educational Institue</Link>
+               <Link to="#">NGO</Link>
+                              <Link to="#">Educational Institue</Link>
               </div>
-            </Dropdown>
-          </div>
-
+          </Dropdown>
+        </div>
           <div className="shareeventOption">
             <button className="createButton">Create</button>
           </div>
-        </div>
-      </div>
-    </div>
+         </div>
+       </div>
+     </div>
   );
 }

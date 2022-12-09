@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Express from 'express';
 import Post from '../models/post.js';
 import multer from 'multer';
@@ -34,6 +35,37 @@ router.post('/add', async (req, res) => {
       res.json({ message: 'Error' });
     });
 });
+=======
+import Express from "express";
+import Post from '../models/post.js'
+import multer from 'multer'
+import path from 'path'
+import bodyparser from 'body-parser'
+const router= Express.Router()
+//create
+
+router.post ('/add', async (req,res) => {
+  console.log(req.body.img)
+  let result = new Post({
+    description: req.body.description,
+    img: req.body.img
+  })
+  result.save();
+  //result.save();
+  // if (result) {
+  //   res.send({code: 200, message: 'done'})
+  // }
+  // else {
+  //   res.send({code: 500, message: 'no'})
+  // }
+})
+
+router.post('/',async (req,res) => {
+    const newPost=new Post (req.body)
+    try {
+        const savePost= await newPost.save();
+        res.status(200).json(savePost);
+>>>>>>> b29aec783f130671e15a85a8c8aada8ea1f400f8
 
 router.post('/', async (req, res) => {
   const newPost = new Post(req.body);
@@ -79,6 +111,7 @@ router.put('/:id/like', async (req, res) => {
 });
 
 // timeline
+<<<<<<< HEAD
 router.get('/timeline/all', async (req, res) => {
   try {
     const currentUser = await User.findById(req.body.userId);
@@ -103,3 +136,20 @@ router.get('/', (req, res) => {
 
 
 export default router;
+=======
+router.get("/timeline/all", async (req, res) => {
+    try {
+      const currentUser = await User.findById(req.body.userId);
+      const userPosts = await Post.find({ userId: currentUser._id });
+      const friendPosts = await Promise.all(
+        currentUser.followings.map((friendId) => {
+          return Post.find({ userId: friendId });
+        })
+      );
+      res.json(userPosts.concat(...friendPosts))
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+export default router
+>>>>>>> b29aec783f130671e15a85a8c8aada8ea1f400f8

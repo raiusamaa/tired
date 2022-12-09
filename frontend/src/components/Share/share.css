@@ -18,12 +18,6 @@ input[type="file"]::file-selector-button
     cursor: pointer;
     
 }
-input[type="file"]::file-selector-button:hover {
-    /* background-color: #86d9ee;
-    border:none; */
-   
-    
-  }
 .shareWrapper
 {
     padding: 10px;
