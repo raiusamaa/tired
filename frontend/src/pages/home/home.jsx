@@ -5,7 +5,10 @@ import Feed from '../../components/Feed/Feed.jsx'
 import "./home.css"
 export default function home() {
   return (
+    
     <>
+   
+    {/* console.log(sessionStorage.getItem("email")) */}
     <Topbar/>
     <div className="homeContainer">
     <Sidebar/>

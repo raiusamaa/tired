@@ -11,6 +11,7 @@ const Login = (props) => {
       e.preventDefault();
       
       try {
+        sessionStorage.setItem("email",email)
        console.log(email,password)
         const { data } = await Axios.post('http://localhost:5000/api/auth/login',
         {
@@ -48,7 +49,7 @@ return (
          onChange={(e) => 
           setPass(e.target.value)}/>
          
-          <button onClick={() => navigate('/Home')} className='LoginButton'>Login</button>
+          <button onClick={submitHandler} className='LoginButton'>Login</button>
           <hr className="loginHr1"></hr>
           <hr className="loginHr2"></hr>
           <hr className="loginHr3"></hr>
