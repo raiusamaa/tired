@@ -3,26 +3,26 @@
 import React, { useEffect, useState } from 'react';
 import './share.css';
 import Axios from 'axios';
-import { ABC } from '../../dummyData';
-import { Posts } from '../../dummyData';
-import { Navigate, redirect } from 'react-router';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
 import { storage } from '../Share/firebase.js'
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {v4} from 'uuid'
 const Share = () =>  {
-
-    const [name,setName]= useState("");
+  let email=sessionStorage.getItem("email");
+  let name = async () => await Axios.post('http://localhost:5000/api/users/email',
+  {
+    email
+  })
     const [description,setDescription]= useState("");
     const [author,setAuthor]= useState("");
     const [imageUpload,setImageUpload]=useState("");
     const [imageList, setImageList] = useState("");
-
-
-    const uploadImg = (e) => {
-
+    const uploadImg = async (e) => {
       e.preventDefault();
+      console.log('here')
+      const username1=await name()
+      const username=username1.data
+      console.log('user')
+      console.log(username.data);
       if (imageUpload == null) return;
       const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then (() => {
@@ -31,6 +31,7 @@ const Share = () =>  {
           URL => {
             Axios.post('http://localhost:5000/api/posts/add', 
             {
+              username,
               description,
               img:URL
             })
@@ -88,6 +89,7 @@ const Share = () =>  {
   //   </div>
   // );
   return (
+    
     <form>
      <div className="share">
        <div className="shareWrapper">

@@ -77,6 +77,11 @@ router.put("/:id/follow", async (req, res) => {
 
 //unfollow user
 
+router.post('/email', async (req,res) => {
+  console.log(req.body.email)
+  const currentUser=await User.findOne({email:req.body.email})
+  res.send(currentUser.name)
+})
 
 export default router
 

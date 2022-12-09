@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 const postSchema = new mongoose.Schema ({
-    // name: {
-    //     type: String
-    // },
+    username: {
+        type: String,
+        default: ""
+    },
     description: {
-        type: String
+        type: String,
+        default:""
     },
     img: {
         type:String,

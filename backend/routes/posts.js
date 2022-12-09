@@ -20,7 +20,7 @@ const router = Express.Router();
 
 router.post('/add', async (req, res) => {
   const newPost = new Post({
-    name: req.body.name,
+    username:req.body.username,
     description: req.body.description,
     img: req.body.img,
   });
