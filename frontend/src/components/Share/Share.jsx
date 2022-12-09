@@ -99,7 +99,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {v4} from 'uuid'
 const Share = () =>  {
   let email=sessionStorage.getItem("email");
-  let username = async () => await Axios.post('http://localhost:5000/api/users/email',
+  let name = async () => await Axios.post('http://localhost:5000/api/users/email',
   {
     email
   })
@@ -110,8 +110,10 @@ const Share = () =>  {
     const uploadImg = async (e) => {
       e.preventDefault();
       console.log('here')
-      const name=await username()
-      console.log(name)
+      const username1=await name()
+      const username=username1.data
+      console.log('user')
+      console.log(username.data);
       if (imageUpload == null) return;
       const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then (() => {
@@ -120,7 +122,7 @@ const Share = () =>  {
           URL => {
             Axios.post('http://localhost:5000/api/posts/add', 
             {
-              name,
+              username,
               description,
               img:URL
             })
