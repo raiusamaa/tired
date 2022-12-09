@@ -20,7 +20,7 @@ const Signup = () =>
 {
   e.preventDefault();
   try {
-   console.log(email,password)
+   //console.log(email,password)
 
     const { data } = await Axios.post('http://localhost:5000/api/auth/register',
     {
@@ -33,14 +33,12 @@ const Signup = () =>
       hobby
     });
 
-    if(data.message == 'Invalid Credentials') {
+    if(data.message === 'Invalid Credentials') {
       alert("Invalid Credentials!")
       return
     }
-    localStorage.setItem("user",JSON.stringify(data));
+    // localStorage.setItem("user",JSON.stringify(data));
     navigate('/Login');
-    navigate('/CommunitiesSignup')
-    navigate('/VeteranSignup')
   }
   catch(err)
   {
@@ -113,16 +111,10 @@ const Signup = () =>
           </label>
           <input value={hobby} type="hobby" id="hobby" 
           onChange={(e) => 
-            setRelationship(e.target.value)}
+            setHobby(e.target.value)}
           />
 
-
-
-
-
-
-
-          <button onClick={() => navigate('/Login')} id='SignupButton'>Signup</button>
+          <button onClick={submitHandler} id='SignupButton'>Signup</button>
          
           <button onClick={() => navigate('/Login')} id="logininstead">Login instead?</button>
         </div>

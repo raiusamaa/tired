@@ -12,29 +12,26 @@ const Login = (props) => {
       
       try {
         sessionStorage.setItem("email",email)
-       console.log(email,password)
+        console.log(email,password)
         const { data } = await Axios.post('http://localhost:5000/api/auth/login',
         {
           email,
           password,
         });
-        if(data.message == 'Invalid Credentials') {
+        if(data.message === 'Invalid Credentials') {
           alert("Invalid Credentials!")
           return
         }
-        localStorage.setItem("user",JSON.stringify(data));
+        //localStorage.setItem("user",JSON.stringify(data));
         navigate('/Home')
       }
       catch(err)
       {
         console.log(err)
-       alert("Something Went Wrong!")
+        alert("Something Went Wrong!")
       }
 }
 return (
-  
-  
-
     <div className="LoginForm">
       <h1 className="loginTitle">Login</h1>
       <img src={icon} id="icon"/>

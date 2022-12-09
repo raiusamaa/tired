@@ -7,8 +7,6 @@ export default function home() {
   return (
     
     <>
-   
-    {/* console.log(sessionStorage.getItem("email")) */}
     <Topbar/>
     <div className="homeContainer">
     <Sidebar/>
