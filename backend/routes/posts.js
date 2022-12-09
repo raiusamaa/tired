@@ -94,11 +94,16 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
-  Post.find({}).then(
-    items => res.json(items))
-    .catch((err) => console.log(err));
-
+router.get('/', async (req, res) => {
+  try
+  {
+  let post = await Post.find()
+  res.json(post);
+  }
+  catch(err)
+  {
+    req.setEncoding('Err' + err)
+  }
 });
 
 

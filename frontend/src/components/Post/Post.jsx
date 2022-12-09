@@ -2,11 +2,17 @@ import React from 'react';
 import './post.css';
 import { Users } from '../../dummyData';
 import { useState } from 'react';
+import Axios from 'axios';
 export default function Post({ post }) {
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
-
+  
+async function getVehicle() 
+{
+  const myData=await Axios.get ('http://localhost:5000/api/posts');
+  //const response=myData.json();
+  const response=
+  console.log(myData['data'][0].username);
+}
+  getVehicle();
   return (
     <div className="post">
       <div className="postWrapper">
