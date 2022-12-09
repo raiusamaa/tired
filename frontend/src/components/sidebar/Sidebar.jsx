@@ -18,6 +18,7 @@ export default function Sidebar() {
         });
       localStorage.setItem("user",JSON.stringify(data));
       navigate('/Events')
+      navigate('/Home')
     }
     catch(err)
       {
@@ -33,13 +34,13 @@ export default function Sidebar() {
         />
           <li className="sidebarListItem">
           <i class="fa fa-home fa-2x" ></i>
-          <button className='sidebarListItemText' >Home</button>
+          <button  onClick={() => navigate('/Home')} className='sidebarListItemText' >Home</button>
           
           </li>
 
           <li className="sidebarListItem">
           <i class="fa fa-object-group fa-2x" ></i>
-          <button className='sidebarListItemText'>Communities</button>
+          <button  className='sidebarListItemText'>Communities</button>
             
           </li>
 

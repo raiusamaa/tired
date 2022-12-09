@@ -10,7 +10,7 @@ export default function ShareEvent() {
           <img className="shareProfileImg" src="/assets/mee.jpeg" />
           <input
             type="text"
-            placeholder="Write title of the event"
+            placeholder="Write anything about the event"
             className="shareeventInput"
           />
           <br></br>
@@ -19,6 +19,8 @@ export default function ShareEvent() {
 
           <label className="labelAddLocation">Add Location</label>
           <input type="text" className="addLocation" />
+          <i class="fa fa-star fa-1x" id="star"></i>
+          <input type="text" className="starCount" />
         </div>
       </div>
 

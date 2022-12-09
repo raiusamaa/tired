@@ -28,12 +28,12 @@ box-shadow: -7px 10px 11px 5px rgba(33,33,36,0.84);
 .inviteButton
 {
     position: absolute;
-    top:-10px;
+    top:190px;
     /* margin-left: 105%; */
 
     border: none;
     padding: 15px;
-    left: 960px;
+    left: 1200px;
     width: 90px;
     border-radius: 5px;
     background-color: rgb(27, 173, 221);
@@ -46,7 +46,7 @@ cursor: pointer;
 .createButton
 {
     position: absolute;
-    top:196px;
+    top:190px;
     /* margin-left: 90%; */
     left: 1350px;
     border: none;
@@ -91,6 +91,18 @@ cursor: pointer;
   border-radius: 10px;
   margin-top: 5px;
 }
+.starCount
+{
+    position: relative;
+   right:350px;
+   top: 80px;
+   width: 50px;
+  background-color: rgb(214, 225, 234);
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px; 
+}
 .labelAddHobbies
 {
     position: absolute;
@@ -117,4 +129,13 @@ cursor: pointer;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     
+}
+#star
+{
+    color: rgb(190, 190, 8);
+    font-size: 1.5em;
+    position: relative;
+   right:360px;
+   top: 80px;
+  
 }

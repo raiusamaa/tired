@@ -9,6 +9,7 @@ import Profile from "./pages/Profile/Profile"
 import CommunitiesSignup from "./pages/Communities/CommunitiesSignup"
 import Signup from './pages/Signup';
 import Events from "./pages/Events/Events"
+import Feed from './components/Feed/Feed';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/CommunitiesSignup" element={<CommunitiesSignup/>} />
               <Route path="/VeteranSignup" element={<Signupform/>} />
               <Route path="/Events" element={<Events/>} />
+             
             </Routes>
           </main>
         </div>
