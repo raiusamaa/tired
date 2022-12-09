@@ -8,6 +8,8 @@ import reg from './routes/reg.js'
 import use from './routes/users.js'
 import post from './routes/posts.js'
 import bodyParser from 'body-parser'
+import users from "./models/users.js";
+import Posts from "./models/post.js";
 mongoose.connect("mongodb://127.0.0.1:27017/SocialMedia");
 
 const corsOptions ={
@@ -28,6 +30,27 @@ app.use(morgan('common'));
 app.get("/",(req,res) => {
     res.send('Welcome To Social Media')
 })
+
+// app.get('/posts/get', (req,res) =>
+// {
+//     postSchema.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else{
+//             res.status(200).send(data);
+//         }
+//     });
+// })
+
+// app.get('/view', (req,res) {
+//     res.find({}, (err, docs)
+//     {
+//         if(err) res.json(err);
+//         else res.render();
+//     })
+// })
 
 app.use('/api/auth',reg)
 app.use('/api/users',use)

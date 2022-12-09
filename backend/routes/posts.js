@@ -45,6 +45,20 @@ router.post('/', async (req, res) => {
   }
 });
 
+//get a post
+// router.get('/get', (req,res) =>
+// {
+//     Posts.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else{
+//             res.status(200).send(data);
+//         }
+//     });
+// })
+
 // del a post
 router.delete('/:id', async (req, res) => {
   try {
@@ -94,12 +108,27 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
+// router.get('/posts/get', (req,res) =>
+// {
+//     postSchema.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else{
+//             res.status(200).send(data);
+//         }
+//     });
+// })
+
 router.get('/', (req, res) => {
   Post.find({}).then(
     items => res.json(items))
     .catch((err) => console.log(err));
 
 });
+
+
 
 
 export default router;
