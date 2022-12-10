@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+// import {Box, FromLabel, FormControl, FormControlLabel, RadioGroup, Radio} from "@mui/material"
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Navigate, redirect } from 'react-router';
 import './communitiessignup.css';
@@ -55,21 +56,42 @@ const CommunitiesSignup = () => {
         <input value={name} type="name"id="comname" onChange={(e) => setName(e.target.value)}/>
 
         <label htmlFor="Profession" id="comProfession">Profession</label>
-        <input value={profession} type="profession" id="comprofession" onChange={(e) => setProff(e.target.value)}/>
+        
+        {/* <div class="dropdown">
+          <button className='commDropButton'>Hello</button>
+          <div class="dropdown-content">
+            <Link to="#">Yes</Link>
+           
+          </div>
+          </div> */}
+       
+        {/* <div className="slide-controls" id='commRadio'>
+           
+           <input  type="radio" name="slide" id="login"  />
+           <input  type="radio" name="slide" id="signup" checked/>
+           <input  type="radio" name="slide" id="signup" checked/>
+           <label for="login" class="slide login">Institue</label>
+           <label for="signup" class="slide signup">Organization</label>
+           <label for="signup" class="slide signup">NGO</label>
+           <div class="slider-tab">
+ 
+           </div>
+         </div> */}
+
+
+
+
+
+
+
+
+
 
         <label htmlFor="email" id="comEmail"> Email</label> 
         <input value={email} type="email"id="comemail" onChange={(e) => setEmail(e.target.value)}/>
         <label htmlFor="password" id="comPassword">Password</label>
         <input value={password} type="password" id="compassword" onChange={(e) => setPass(e.target.value)}/>
 
-          {/* <Dropdown>
-          <button className="typeOfProfile">Type Of Profile</button>
-            <div className="dropdown-content">
-            <Link to="#">Organization</Link>
-            <Link to="#">NGO</Link>
-            <Link to="#">Educational Institue</Link>
-           </div>
-        </Dropdown> */}
         
 
         <button onClick={() => navigate('/Login')} id="SignupButton">

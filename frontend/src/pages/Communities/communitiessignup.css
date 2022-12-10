@@ -132,8 +132,23 @@
 {
   background-color: rgb(141, 195, 240);
 }
+.commDropButton
+{
+  position: relative;
+  bottom: 90px;
+  display: inline-block;
+}
+.dropdown
+{
+ 
+}
 
-  
+.dropdown-content
+{
+ position: absolute;
+ right: 100%;
+}
+
   .dropdown-content a:hover {background-color: rgb(202, 224, 241);}
   
   .dropdown:hover .dropdown-content {display: block;}

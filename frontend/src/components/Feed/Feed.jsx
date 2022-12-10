@@ -21,22 +21,7 @@ export default class Feed extends React.Component {
     this.setState({})
   })
   }
-//   async function getData() 
-// {
-//   const myData=await Axios.get ('http://localhost:5000/api/posts');
-//   console.log("hello bbay");
-//   console.log(myData['data'][0].username);
-// }
-//   getData();
-// useEffect(() => 
-// {
-//   const fetchData = async () =>
-//   {
-//     const data = await Axios.get('http://localhost:5000/posts/get');
-//     console.log("hellllooo >>>>>", data)
-//   };
-// fetchData();
-// }, []);
+
 render()
 {
   return (

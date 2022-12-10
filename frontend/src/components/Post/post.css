@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 .post
 {
     width: 100%;
@@ -86,6 +87,37 @@
     height: 40px;
    
 }
+#follow-btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    /* color: #3399FF;
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #3399FF;
+    border-radius: 3px;
+    width: 85px;
+    height: 30px;
+    position: absolute;	 
+    top: 50px;
+    left: 50px;	
+    cursor: hand;		     */
+  }
+  .follow-btn a {
+    width: 60px;
+    height: 55px;
+    line-height: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+   display: inline-block;
+	vertical-align: middle;
+	padding-top:5px;
+}
 .postBottomLeft
 {
     display: flex;
@@ -138,5 +170,119 @@
    margin-left: 0px;
    top:50px;
 }
+.center ul{
+    list-style: none;
+    position: relative;
+    display: inline;
+}
+.center ul li{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    text-align: left;
+    background-color: aquamarine;
+    line-height: 55px;
+    margin: 0 -16px;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: background-color .5s ease-out,
+                border-radius .5s .25s ease-out,
+                margin .5s .25s ease-out;
+
+}
+.center
+{
+    width: 315px;
+    
+    text-align: left;
+}
+
+.center ul li i{
+    color: red;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 1.7s;
+}
+.center ul li:hover {
+    background-color: blanchedalmond;
+}
+.center ul .followText
+{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    text-align: center;
+    background: #1f7a7a ;
+    color: blueviolet;
+    line-height: 50px;
+    border-radius: 50px;
+    font-size:22px;
+    pointer-events: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.center ul:hover .followText
+{
+    opacity: 0;
+    transition: opacity .5s .125s ease-out;
+
+}
+.center ul:hover li i{
+    opacity: 1;
+}
+.center ul li:nth-child(1)
+{
+   border-bottom-left-radius: 25px;
+   border-top-left-radius: 25px;
+}
+.center ul:hover li{
+    border-radius: 50px;
+    margin:  0 3px;
+}
+.follow-button {
+    /* visibility: hidden; */
+    color: #3399FF;
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: white;
+    border: 1px solid;
+    border-color: #3399FF;
+    border-radius: 3px;
+    width: 85px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;	 
+    top: 50px;
+    left: 50px;	
+    cursor: hand;		    
+  }
+  /* .follow-button::after
+  {
+    visibility: visible;
+    position: absolute;
+    content: "Followed";
+  } */
+  .follow-button:focus
+  {
+    color: #3399FF;
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: #220557;
+    border: 1px solid;
+    border-color: #3399FF;
+    border-radius: 50px;
+    width: 85px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;	 
+    top: 50px;
+    left: 50px;	
+    visibility: visible;
+    content: "Followed";
+    cursor: hand;		
+  }
+
+
+
 
 
