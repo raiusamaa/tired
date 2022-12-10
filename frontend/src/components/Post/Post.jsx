@@ -4,7 +4,6 @@ import { Users } from '../../dummyData';
 import { useState } from 'react';
 import Axios from 'axios';
 export default function Post({ post }) {
-const myData=Axios.get ('http://localhost:5000/api/posts');
 async function getData() 
 {
   const myData=await Axios.get ('http://localhost:5000/api/posts');

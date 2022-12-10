@@ -1,6 +1,7 @@
 import Express from 'express';
 import Post from '../models/post.js';
 import multer from 'multer';
+import Posts from '../models/post.js';
 const router = Express.Router();
 
 
@@ -54,6 +55,20 @@ router.post('/', async (req, res) => {
   }
 });
 
+//get a post
+// router.get('/get', (req,res) =>
+// {
+//     Posts.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else{
+//             res.status(200).send(data);
+//         }
+//     });
+// })
+
 // del a post
 router.delete('/:id', async (req, res) => {
   try {
@@ -103,17 +118,27 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
-  try
-  {
-  let post = await Post.find()
-  res.json(post);
-  }
-  catch(err)
-  {
-    req.setEncoding('Err' + err)
-  }
-});
+// router.get('/posts/get', (req,res) =>
+// {
+//     Post.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else{
+//             res.status(200).send(data);
+//         }
+//     });
+// })
+
+// router.get('/', (req, res) => {
+//   postSchema.find({}).then(
+//     items => res.json(items))
+//     .catch((err) => console.log(err));
+
+// });
+
+
 
 
 export default router;
