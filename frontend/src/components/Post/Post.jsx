@@ -3,7 +3,9 @@ import './post.css';
 import Axios from 'axios';
 import { Users } from '../../dummyData';
 import { useState } from 'react';
+import Axios from 'axios';
 export default function Post({ post }) {
+<<<<<<< HEAD
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -28,6 +30,17 @@ export default function Post({ post }) {
   
 
 
+=======
+  
+async function getData() 
+{
+  const myData=await Axios.get ('http://localhost:5000/api/posts');
+  //const response=myData.json();
+  const response=
+  console.log(myData['data'][0].username);
+}
+  getData();
+>>>>>>> aafab5438684417d278d603a14bcbfda020b1981
   return (
     <div className="post">
       <div className="postWrapper">
