@@ -23,4 +23,11 @@ router.post('/add', async (req, res) => {
       });
   });
 
+  router.get('/', (req, res) => 
+  {
+    Events.find({}).then(
+      items => res.json(items))
+      .catch((err) => console.log(err));
+  });
+
   export default router;

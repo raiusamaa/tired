@@ -11,11 +11,12 @@ export default class Events extends React.Component
   {
     events:[]
   }
-  componentDidMount(){
+  componentDidMount()
+  {
     Axios.get('http://localhost:5000/api/events')
     .then (res => {this.state.events=res.data
     console.log(this.state.events)
-    console.log('ddaa')
+    console.log('events')
     this.setState({})
   })
   }
@@ -24,14 +25,14 @@ render(){
     <div className='Events'>
       <div className='eventsWrapper'>
         <ShareEvent/>
-        <ShareEventPost/>
-        {/* {
+        {/* <ShareEventPost/> */}
+        {
           this.state.events.map(p=>
             (
               <ShareEventPost key={p._id} event={p}/>
             ))
 
-        } */}
+        }
       </div>
     </div>
   )

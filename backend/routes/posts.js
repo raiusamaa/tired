@@ -126,6 +126,5 @@ router.get('/', (req, res) => {
   Post.find({}).then(
     items => res.json(items))
     .catch((err) => console.log(err));
-
 });
 export default router;

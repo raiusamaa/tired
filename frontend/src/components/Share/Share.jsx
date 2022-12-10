@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './share.css';
 import Axios from 'axios';
-import { storage } from '../Share/firebase.js'
+import { storage } from './firebase.js'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {v4} from 'uuid'
 const Share = () =>  {
@@ -21,12 +21,16 @@ const Share = () =>  {
       const username=username1.data
       console.log('user')
       console.log(username.data);
-      if (imageUpload == null) return;
       const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then (() => {
         console.log(imageRef);
         getDownloadURL(imageRef).then(
+          
           URL => {
+          if (imageUpload === "")
+          {
+            URL = 'https://firebasestorage.googleapis.com/v0/b/myweb-e58a5.appspot.com/o/images%2Fcalendar-icon-upcoming-events-31.png?alt=media&token=53f87b09-ddaf-4594-8b81-f4b03bf91d3d'
+          }
             Axios.post('http://localhost:5000/api/posts/add', 
             {
               username,

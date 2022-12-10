@@ -3,8 +3,7 @@ import './shareevent.css';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import Axios from 'axios';
-
-import { storage } from '../Share/firebase.js'
+import { storage } from './firebase.js'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {v4} from 'uuid'
 
@@ -24,10 +23,14 @@ export default function ShareEvent()
   const [description, setEventDetails] = useState("");
   const [imageUpload,setImageUpload]=useState("");
 
+  
+
   const uploadImg = async (e) => {
     e.preventDefault();
+    console.log('here')
     const username1=await name()
     const createdBy=username1.data
+    console.log('user')
     if (imageUpload == null) return;
     const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
     uploadBytes(imageRef, imageUpload).then (() => {
@@ -66,7 +69,7 @@ export default function ShareEvent()
           <input type="text" className='eventTitleInput' onChange={(e) => setTitle(e.target.value)}/>
           <br></br>
           <div className="shareeventOption">
-          <input type="file" className="chooseEventFile" />
+          <input type="file" className="chooseEventFile" onChange={(event) => setImageUpload(event.target.files[0])} />
           </div>
           <br></br>
           

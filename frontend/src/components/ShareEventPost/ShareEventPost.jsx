@@ -4,6 +4,7 @@ import { Users } from '../../dummyData';
 import { useState } from 'react';
 import Axios from "axios"
 export default function ShareEventPost({event}) {
+  //console.log(event)
   return (
     <div className='shareeventPost'>
         <div className="shareeventWrapper">
@@ -11,8 +12,8 @@ export default function ShareEventPost({event}) {
             <div className="shareeventPostTop">
                 <div className="shareeventPostTopLeft">
                 <i class="fa fa-user-circle-o fa-2x" id="usernameIcon"></i>
-                {/* <span className="postUsername">{event.username}</span>
-                <span className="postDate">{event.date}</span> */}
+                <span className="postUsername">{event.createdBy}</span>
+                <span className="postDate">{event.date}</span>
                 </div>
 
                 <div className="shareeventPostTopRight">
@@ -25,8 +26,8 @@ export default function ShareEventPost({event}) {
 
             {/* Center */}
             <div className="shareeventPostCenter">
-                {/* <span className="postText">{event?.description}</span>
-                <img className="postImg" src={event.img} /> */}
+                <span className="postText">{event?.description}</span>
+                <img className="postImg" src={event.img} />
             </div>
         </div>
 
