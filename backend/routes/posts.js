@@ -1,14 +1,7 @@
 import Express from 'express';
 import Post from '../models/post.js';
 import multer from 'multer';
-import Posts from '../models/post.js';
 const router = Express.Router();
-
-
-const uploads = multer({
-  dest:'uploads/'
-});
-
 //create
 
 router.post('/add', async (req, res) => {
@@ -28,22 +21,22 @@ router.post('/add', async (req, res) => {
     });
 });
 
-router.post('/adds', uploads.single('image'), async (req, res) => {
-  const newPost = new Post({
-    username:req.body.username,
-    description: req.body.description,
-    img: req.path
-  });
-  console.log('called');
-  newPost
-    .save()
-    .then((response) => {
-      res.json({ message: 'V Added' });
-    })
-    .catch((error) => {
-      res.json({ message: 'Error' });
-    });
-});
+// router.post('/adds', uploads.single('image'), async (req, res) => {
+//   const newPost = new Post({
+//     username:req.body.username,
+//     description: req.body.description,
+//     img: req.path
+//   });
+//   console.log('called');
+//   newPost
+//     .save()
+//     .then((response) => {
+//       res.json({ message: 'V Added' });
+//     })
+//     .catch((error) => {
+//       res.json({ message: 'Error' });
+//     });
+// });
 
 router.post('/', async (req, res) => {
   const newPost = new Post(req.body);
@@ -118,27 +111,22 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
-// router.get('/posts/get', (req,res) =>
+// router.get('/allposts', (req,res) =>
 // {
-//     Post.find((err,data) => {
-//         if(err)
-//         {
-//             res.status(500).send(err)
-//         }
-//         else{
-//             res.status(200).send(data);
-//         }
-//     });
-// })
+//     Post.find()
+//     .populate('username')
+//     .then (posts => {
+//       res.json({posts})
+//     })
+//     .catch (err => {
+//       console.log(err)
+//     })
+//})
 
-// router.get('/', (req, res) => {
-//   postSchema.find({}).then(
-//     items => res.json(items))
-//     .catch((err) => console.log(err));
+router.get('/', (req, res) => {
+  Post.find({}).then(
+    items => res.json(items))
+    .catch((err) => console.log(err));
 
-// });
-
-
-
-
+});
 export default router;

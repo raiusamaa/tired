@@ -6,14 +6,8 @@ export default function Events() {
   return (
     <div className='Events'>
         <div className='eventsWrapper'>
-           
             <ShareEvent/>
-
         </div>
-
-
-
-
     </div>
   )
 }
