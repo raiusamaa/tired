@@ -3,44 +3,26 @@ import './post.css';
 import Axios from 'axios';
 import { Users } from '../../dummyData';
 import { useState } from 'react';
-import Axios from 'axios';
 export default function Post({ post }) {
-<<<<<<< HEAD
   const onSubmit = (e) => {
     e.preventDefault();
-
   };
   // const getData = async () => await Axios.post('http://localhost:5000/api/users/email');
   // const response = getData.json();
   // console.log(response);
-  
-  const [posts, setPosts] = useState('');
-  useEffect(() => {
 
-    const fetchdata = async () => await Axios.get ('http://localhost:5000/api/posts');
-    console.log(fetchdata.data);
-  
-    // const fetchdata = async () => {
-    //   const data = await Axios.get('http://localhost:5000/api/posts/');
-    //   setPosts(data);
-    };
-    fetchdata();
+  // const [posts, setPosts] = useState('');
+  // useEffect(() => {
 
+  //   const fetchdata = async () => await Axios.get ('http://localhost:5000/api/posts');
+  //   console.log(fetchdata.data);
 
-  
+  //   // const fetchdata = async () => {
+  //   //   const data = await Axios.get('http://localhost:5000/api/posts/');
+  //   //   setPosts(data);
+  //   };
+  //   fetchdata();
 
-
-=======
-  
-async function getData() 
-{
-  const myData=await Axios.get ('http://localhost:5000/api/posts');
-  //const response=myData.json();
-  const response=
-  console.log(myData['data'][0].username);
-}
-  getData();
->>>>>>> aafab5438684417d278d603a14bcbfda020b1981
   return (
     <div className="post">
       <div className="postWrapper">
@@ -63,8 +45,8 @@ async function getData()
         </div>
 
         <div className="postCenter">
-          <span className="postText">{posts?.desc}</span>
-          <img className="postImg" src={posts.photo} />
+          {/* <span className="postText">{posts?.desc}</span>
+          <img className="postImg" src={posts.photo} /> */}
         </div>
 
         <div className="postBottom">

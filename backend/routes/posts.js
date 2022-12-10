@@ -118,7 +118,6 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // router.get('/posts/get', (req,res) =>
 // {
 //     Post.find((err,data) => {
@@ -140,19 +139,6 @@ router.get('/timeline/all', async (req, res) => {
 // });
 
 
-=======
-router.get('/', async (req, res) => {
-  try
-  {
-  let post = await Post.find()
-  res.json(post);
-  }
-  catch(err)
-  {
-    req.setEncoding('Err' + err)
-  }
-});
->>>>>>> aafab5438684417d278d603a14bcbfda020b1981
 
 
 export default router;
