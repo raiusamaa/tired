@@ -46,48 +46,7 @@ const Share = () =>  {
       console.log(imageList);
     };
 
-  // return (
-  //   <div className="share">
-  //     <div className="shareWrapper">
-  //       <div className="shareTop">
-  //         <img className="shareProfileImg" src="/assets/mee.jpeg" />
-  //         <input
-  //           value={description}
-  //           type="text"
-  //           placeholder="What's in your mind?"
-  //           className="shareInput"
-  //           onChange={(e) => setDescription(e.target.value)}/>
-  //       </div>
-        // <hr className="shareHr"></hr>
-        // <div className="shareBottom">
-        //   <div className="shareOptions">
-
-        //     <div className="shareOption">
-            // <input type="file" className="chooseFile" onChange={OnChangeFile}></input>
-        //     <i class="fa fa-camera fa-1x"></i>
-        //     <span  className="shareOptionText">Multimedia</span>
-        //     </div>
-
-  //           <div className="shareOption">
-  //             <i class="fa fa-tags fa-1x"></i>
-  //             <span className="shareOptionText">Tag</span>
-  //           </div>
-
-  //           <div className="shareOption">
-  //             <i class="fa fa-smile-o fa-1x"></i>
-  //             <span className="shareOptionText">Emoji</span>
-  //           </div>
-
-  //           <div className="shareOption">
-  //             <i class="fa fa-music fa-1x"></i>
-  //             <span className="shareOptionText">Music</span>
-  //           </div>
-  //         </div>
-  //         <button className="shareButton" onSubmit={changeOnClick} >Shareit</button>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
+ 
   return (
     
     <form>
@@ -98,7 +57,7 @@ const Share = () =>  {
            <input
              value={description}
              type="text"
-             placeholder="What's in your mind?"
+             placeholder="What's on your mind?"
              className="shareInput"
              onChange={(e) => setDescription(e.target.value)}/>
          </div>
