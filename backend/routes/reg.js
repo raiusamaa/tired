@@ -37,5 +37,18 @@ router.post('/login', async(req,res) => {
     }
 })
 
+router.patch('/updateHobby', async (req,res) => {
+    console.log('dd')
+    const currentUser=await users.updateOne({email:req.body.email}, {
+        $set:{
+          name:req.body.name,
+          city:req.body.city,
+          relationship:req.body.relationship,
+          hobbies:req.body.hobbies,
+          profession:req.body.profession
+        }
+      })
+    res.send(currentUser.name);
+});
 
 export default router

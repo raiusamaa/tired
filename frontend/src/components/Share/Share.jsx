@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import './share.css';
 import Axios from 'axios';

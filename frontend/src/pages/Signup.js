@@ -12,7 +12,7 @@ const Signup = () =>
   const [name, setName] = useState('');
   const [city, setCity] = useState('');
   const [relationship, setRelationship] = useState('');
-  const [hobby, setHobby] = useState('');
+  const [hobbies, setHobby] = useState('');
 
   const navigate=useNavigate()
 
@@ -30,7 +30,7 @@ const Signup = () =>
       name,
       city,
       relationship,
-      hobby
+      hobbies
     });
 
     if(data.message === 'Invalid Credentials') {
@@ -109,7 +109,7 @@ const Signup = () =>
            <label htmlFor="hobby" id="Hobby">
            Hobbies
           </label>
-          <input value={hobby} type="hobby" id="hobby" 
+          <input value={hobbies} type="hobby" id="hobby" 
           onChange={(e) => 
             setHobby(e.target.value)}
           />
