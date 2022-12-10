@@ -118,25 +118,24 @@ router.get('/timeline/all', async (req, res) => {
   }
 });
 
-// router.get('/posts/get', (req,res) =>
+// router.get('/allposts', (req,res) =>
 // {
-//     Post.find((err,data) => {
-//         if(err)
-//         {
-//             res.status(500).send(err)
-//         }
-//         else{
-//             res.status(200).send(data);
-//         }
-//     });
-// })
+//     Post.find()
+//     .populate('username')
+//     .then (posts => {
+//       res.json({posts})
+//     })
+//     .catch (err => {
+//       console.log(err)
+//     })
+//})
 
-// router.get('/', (req, res) => {
-//   postSchema.find({}).then(
-//     items => res.json(items))
-//     .catch((err) => console.log(err));
+router.get('/', (req, res) => {
+  postSchema.find({}).then(
+    items => res.json(items))
+    .catch((err) => console.log(err));
 
-// });
+});
 
 
 

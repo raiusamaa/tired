@@ -1,14 +1,16 @@
 import React from 'react';
 import './post.css';
 import { Users } from '../../dummyData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Axios from 'axios';
 export default function Post({ post }) {
 async function getData() 
 {
-  const myData=await Axios.get ('http://localhost:5000/api/posts');
-  //const response=myData.json();
-  const response=
-  console.log(myData['data'][0].username);
+  const setData=Axios.get ('http://localhost:5000/api/posts')
+  // const myData=await Axios.get ('http://localhost:5000/api/posts');
+  // console.log(myData['data'][0].username);
+  // i<length,
+  // data
 }
   getData();
   return (
@@ -33,8 +35,6 @@ async function getData()
         </div>
 
         <div className="postCenter">
-          {/* <span className="postText">{posts?.desc}</span>
-          <img className="postImg" src={posts.photo} /> */}
         </div>
 
         <div className="postBottom">
