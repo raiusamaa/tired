@@ -36,8 +36,8 @@ async function getData()
         
 
         <div className="postCenter">
-          {/* <span className="postText">{posts?.desc}</span>
-          <img className="postImg" src={posts.photo} /> */}
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={post.photo} />
         </div>
 
         <div className="postBottom">
