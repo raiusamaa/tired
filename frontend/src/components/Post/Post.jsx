@@ -1,80 +1,113 @@
-import React from 'react';
-import './post.css';
-import { Users } from '../../dummyData';
-import { useState } from 'react';
-export default function Post({ post }) {
-<<<<<<< HEAD
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
-  // const getData = async () => await Axios.post('http://localhost:5000/api/users/email');
-  // const response = getData.json();
-  // console.log(response);
 
-  // const [posts, setPosts] = useState('');
-  // useEffect(() => {
 
-  //   const fetchdata = async () => await Axios.get ('http://localhost:5000/api/posts');
-  //   console.log(fetchdata.data);
+import React, { useEffect, useState } from 'react';
+import './share.css';
+import Axios from 'axios';
+import { storage } from '../Share/firebase.js'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import {v4} from 'uuid'
+const Share = () =>  {
+  let email=sessionStorage.getItem("email");
+  let name = async () => await Axios.post('http://localhost:5000/api/users/email',
+  {
+    email
+  })
+    const [description,setDescription]= useState("");
+    const [author,setAuthor]= useState("");
+    const [imageUpload,setImageUpload]=useState("");
+    const [imageList, setImageList] = useState("");
+    const uploadImg = async (e) => {
+      e.preventDefault();
+      console.log('here')
+      const username1=await name()
+      const username=username1.data
+      console.log('user')
+      console.log(username.data);
+      if (imageUpload == null) return;
+      const imageRef= ref(storage, `images/${imageUpload.name + v4()}`);
+      uploadBytes(imageRef, imageUpload).then (() => {
+        console.log(imageRef);
+        getDownloadURL(imageRef).then(
+          URL => {
+            Axios.post('http://localhost:5000/api/posts/add', 
+            {
+              username,
+              description,
+              img:URL
+            })
+          }
+        )
+        .catch 
+        (
+          e => console.log('err')
+        )
+        alert('Uploaded');
+      })
+      console.log(imageList);
+    };
 
-  //   // const fetchdata = async () => {
-  //   //   const data = await Axios.get('http://localhost:5000/api/posts/');
-  //   //   setPosts(data);
-  //   };
-  //   fetchdata();
+  // return (
+  //   <div className="share">
+  //     <div className="shareWrapper">
+  //       <div className="shareTop">
+  //         <img className="shareProfileImg" src="/assets/mee.jpeg" />
+  //         <input
+  //           value={description}
+  //           type="text"
+  //           placeholder="What's in your mind?"
+  //           className="shareInput"
+  //           onChange={(e) => setDescription(e.target.value)}/>
+  //       </div>
+        // <hr className="shareHr"></hr>
+        // <div className="shareBottom">
+        //   <div className="shareOptions">
 
-=======
-async function getData() 
-{
-  const myData=await Axios.get ('http://localhost:5000/api/posts');
-  //const response=myData.json();
-  const response=
-  console.log(myData['data'][0].username);
-}
-  getData();
->>>>>>> b5e443a89a589d6ce0367e06c1b90ad3be0cef9a
+        //     <div className="shareOption">
+            // <input type="file" className="chooseFile" onChange={OnChangeFile}></input>
+        //     <i class="fa fa-camera fa-1x"></i>
+        //     <span  className="shareOptionText">Multimedia</span>
+        //     </div>
+
+  //           <div className="shareOption">
+  //             <i class="fa fa-tags fa-1x"></i>
+  //             <span className="shareOptionText">Tag</span>
+  //           </div>
+
+  //           <div className="shareOption">
+  //             <i class="fa fa-smile-o fa-1x"></i>
+  //             <span className="shareOptionText">Emoji</span>
+  //           </div>
+
+  //           <div className="shareOption">
+  //             <i class="fa fa-music fa-1x"></i>
+  //             <span className="shareOptionText">Music</span>
+  //           </div>
+  //         </div>
+  //         <button className="shareButton" onSubmit={changeOnClick} >Shareit</button>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
   return (
-    <div className="post">
-      <div className="postWrapper">
-        <div className="postTop">
-          <div className="postTopLeft">
-            <img
-              className="postProfileImg"
-              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
-            />
-
-            <span className="postUsername">
-              {Users.filter((u) => u.id === post.userId)[0].username}
-            </span>
-            <span className="postUsername">{post.date}</span>
-          </div>
-
-          <div className="postTopRight">
-            <i class="fa fa-bars fa-1x"></i>
-          </div>
-        </div>
-
-        <div className="postCenter">
-<<<<<<< HEAD
-          {/* <span className="postText">{posts?.desc}</span>
-          <img className="postImg" src={posts.photo} /> */}
-=======
-          <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.photo} />
->>>>>>> b5e443a89a589d6ce0367e06c1b90ad3be0cef9a
-        </div>
-
-        <div className="postBottom">
-          <div className="postBottomLeft">
-            <img className="likeIcon" src="/assets/heart.png" />
-            <img className="likeIcon" src="/assets/like.png" />
-            <span className="postLikeCounter">{post.like} people like it</span>
-          </div>
-          <div className="postBottomRight">
-            <span className="postCommentText">{post.comment} comments</span>
-          </div>
-        </div>
+    
+    <form>
+     <div className="share">
+       <div className="shareWrapper">
+         <div className="shareTop">
+           <img className="shareProfileImg" src="/assets/mee.jpeg" />
+           <input
+             value={description}
+             type="text"
+             placeholder="What's in your mind?"
+             className="shareInput"
+             onChange={(e) => setDescription(e.target.value)}/>
+         </div>
+         <input type="file" className="chooseFile" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
       </div>
-    </div>
-  );
+      </div>
+      <button onClick={uploadImg}>Submit</button>
+    </form>
+  )
 }
+
+export default Share;
