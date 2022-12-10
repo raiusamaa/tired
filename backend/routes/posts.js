@@ -1,14 +1,7 @@
 import Express from 'express';
 import Post from '../models/post.js';
 import multer from 'multer';
-import Posts from '../models/post.js';
 const router = Express.Router();
-
-
-const uploads = multer({
-  dest:'uploads/'
-});
-
 //create
 
 router.post('/add', async (req, res) => {
@@ -28,22 +21,22 @@ router.post('/add', async (req, res) => {
     });
 });
 
-router.post('/adds', uploads.single('image'), async (req, res) => {
-  const newPost = new Post({
-    username:req.body.username,
-    description: req.body.description,
-    img: req.path
-  });
-  console.log('called');
-  newPost
-    .save()
-    .then((response) => {
-      res.json({ message: 'V Added' });
-    })
-    .catch((error) => {
-      res.json({ message: 'Error' });
-    });
-});
+// router.post('/adds', uploads.single('image'), async (req, res) => {
+//   const newPost = new Post({
+//     username:req.body.username,
+//     description: req.body.description,
+//     img: req.path
+//   });
+//   console.log('called');
+//   newPost
+//     .save()
+//     .then((response) => {
+//       res.json({ message: 'V Added' });
+//     })
+//     .catch((error) => {
+//       res.json({ message: 'Error' });
+//     });
+// });
 
 router.post('/', async (req, res) => {
   const newPost = new Post(req.body);
@@ -131,13 +124,9 @@ router.get('/timeline/all', async (req, res) => {
 //})
 
 router.get('/', (req, res) => {
-  postSchema.find({}).then(
+  Post.find({}).then(
     items => res.json(items))
     .catch((err) => console.log(err));
 
 });
-
-
-
-
 export default router;

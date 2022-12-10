@@ -1,30 +1,28 @@
 import React from 'react';
 import './post.css';
 import { Users } from '../../dummyData';
-import { useState, useEffect } from 'react';
-import Axios from 'axios';
+import { useState } from 'react';
+import Axios from "axios"
 export default function Post({ post }) {
-async function getData() 
-{
-  const setData=Axios.get ('http://localhost:5000/api/posts')
-  // const myData=await Axios.get ('http://localhost:5000/api/posts');
-  // console.log(myData['data'][0].username);
-  // i<length,
-  // data
-}
-  getData();
+// async function getData() 
+// {
+//   const myData=await Axios.get ('http://localhost:5000/api/posts');
+//   console.log(myData['data'][0].username);
+// }
+//   getData();
   return (
     <div className="post">
+      {/* <img src={post.img}></img> */}
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
+            {/* <img
               className="postProfileImg"
-              src={Users.filter((u) => u.id === post.userId)[0].profilePicture}
-            />
+              src={post.img}
+            /> */}
 
             <span className="postUsername">
-              {Users.filter((u) => u.id === post.userId)[0].username}
+              {post.username}
             </span>
             <span className="postUsername">{post.date}</span>
           </div>
@@ -35,6 +33,8 @@ async function getData()
         </div>
 
         <div className="postCenter">
+          <span className="postText">{post?.description}</span>
+          <img className="postImg" src={post.img} />
         </div>
 
         <div className="postBottom">

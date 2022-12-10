@@ -31,6 +31,20 @@ app.get("/",(req,res) => {
     res.send('Welcome To Social Media')
 })
 
+// app.get('/posts/get') , (req,res) => {
+//     Posts.find((err,data) => {
+//         if(err)
+//         {
+//             res.status(500).send(err)
+//         }
+//         else
+//         {
+//             res.status(200).send(data);
+//         }
+        
+//     });
+// }
+
 // app.get('/posts/get', (req,res) =>
 // {
 //     Posts.find((err,data) => {
