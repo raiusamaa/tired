@@ -5,14 +5,14 @@ import { useState } from 'react';
 import Axios from 'axios';
 export default function Post({ post }) {
   
-async function getVehicle() 
+async function getData() 
 {
   const myData=await Axios.get ('http://localhost:5000/api/posts');
   //const response=myData.json();
   const response=
   console.log(myData['data'][0].username);
 }
-  getVehicle();
+  getData();
   return (
     <div className="post">
       <div className="postWrapper">

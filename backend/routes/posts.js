@@ -3,18 +3,10 @@ import Post from '../models/post.js';
 import multer from 'multer';
 const router = Express.Router();
 
-// const storage= multer.diskStorage( {
-//   destination: (req, file, callback) => {
-//     callback(null, './frontend/posts/')
-//   },
-//   filename: (req,file,callback) => {
-//     callback(null, file.originalname); //origname is name of file
-//   }
-// })
 
-// const uploads = multer({
-//   storage: storage
-// });
+const uploads = multer({
+  dest:'uploads/'
+});
 
 //create
 
@@ -23,6 +15,23 @@ router.post('/add', async (req, res) => {
     username:req.body.username,
     description: req.body.description,
     img: req.body.img,
+  });
+  console.log('called');
+  newPost
+    .save()
+    .then((response) => {
+      res.json({ message: 'V Added' });
+    })
+    .catch((error) => {
+      res.json({ message: 'Error' });
+    });
+});
+
+router.post('/adds', uploads.single('image'), async (req, res) => {
+  const newPost = new Post({
+    username:req.body.username,
+    description: req.body.description,
+    img: req.path
   });
   console.log('called');
   newPost
