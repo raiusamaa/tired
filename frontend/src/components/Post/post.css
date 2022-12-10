@@ -17,6 +17,9 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(26, 80, 128);
+    height: 43px;
+    border-radius: 40px;
 }
 .postTopLeft
 {
@@ -34,13 +37,32 @@
 .postUsername
 {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: bold;
     margin:0 10px;
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 .postDate
 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 100;
+    display: inline;
+    color: white;
+    margin-left: 825px;
+}
+#postBars
+{
+    position: relative;
+    right:10px;
+    color: white;
+}
+#postShare
+{
+    position: relative;
+    right:60px;
+    color: white;
 }
 .postCenter
 {
@@ -59,6 +81,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(143, 186, 224);
+    border-radius: 50px;
+    height: 40px;
+   
 }
 .postBottomLeft
 {
@@ -82,3 +108,35 @@
     border-bottom: 1px dashed gray;
     font-size: 15px;
 }
+/* .postingText
+{
+    font-size: 12px;
+    display: inline;
+    margin-left: 200px;
+} */
+#usernameIcon
+{
+    color: white;
+    position: relative;
+    top:1px;
+    margin-left: 10px;
+}
+.postHr1
+{
+    width: 100%;
+    background-color: rgb(62, 119, 181);
+    height: 3px;
+    position: relative;
+   margin-left: 0px;
+}
+.postHr2
+{
+    width: 100%;
+    background-color: rgb(62, 119, 181);
+    height: 3px;
+    position: relative;
+   margin-left: 0px;
+   top:50px;
+}
+
+

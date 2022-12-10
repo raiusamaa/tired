@@ -12,28 +12,40 @@ export default function Post({ post }) {
 //   getData();
   return (
     <div className="post">
-      {/* <img src={post.img}></img> */}
+      
       <div className="postWrapper">
+      {/* <hr className="postHr1"></hr> */}
+      {/* <hr className="postHr2"></hr> */}
+      {/* <hr className="postHr3"></hr>
+      <hr className="postHr4"></hr> */}
         <div className="postTop">
           <div className="postTopLeft">
-            {/* <img
-              className="postProfileImg"
-              src={post.img}
-            /> */}
-
+         
+          <i class="fa fa-user-circle-o fa-2x" id="usernameIcon" ></i>
             <span className="postUsername">
-              {post.username}
+              {post.username} 
+             
             </span>
-            <span className="postUsername">{post.date}</span>
+           {/* <div className='postingText'>
+            <p>posted something new</p>
+           </div> */}
+
+           
+           
+            
+            
+            <span className="postDate">{post.date}</span>
           </div>
 
           <div className="postTopRight">
-            <i class="fa fa-bars fa-1x"></i>
+            <i class="fa fa-bars fa-1x" id='postBars'></i>
+            <i class="fa fa-share fa-1x" id='postShare'></i>
           </div>
         </div>
 
         <div className="postCenter">
           <span className="postText">{post?.description}</span>
+         
           <img className="postImg" src={post.img} />
         </div>
 
