@@ -1,5 +1,5 @@
 import Express from 'express';
-import Events from '../models/events';
+import Events from '../models/events.js';
 const router = Express.Router();
 
 router.post('/add', async (req, res) => {
@@ -8,10 +8,12 @@ router.post('/add', async (req, res) => {
         description: req.body.description,
         img:req.body.img,
         hobbies: req.body.hobbies,
-        location: req.body.location
+        location: req.body.location,
+        createdBy: req.body.createdBy,
+        starts: req.body.starts
     });
     console.log('called');
-    newPost
+    newEvent
       .save()
       .then((response) => {
         res.json({ message: 'V Added' });
@@ -20,3 +22,5 @@ router.post('/add', async (req, res) => {
         res.json({ message: 'Error' });
       });
   });
+
+  export default router;

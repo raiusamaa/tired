@@ -8,8 +8,7 @@ import reg from './routes/reg.js'
 import use from './routes/users.js'
 import post from './routes/posts.js'
 import bodyParser from 'body-parser'
-import users from "./models/users.js";
-import Posts from "./models/post.js";
+import events from './routes/events.js'
 mongoose.connect("mongodb://127.0.0.1:27017/SocialMedia");
 
 const corsOptions ={
@@ -69,6 +68,7 @@ app.get("/",(req,res) => {
 app.use('/api/auth',reg)
 app.use('/api/users',use)
 app.use('/api/posts',post)
+app.use('/api/events',events)
 app.listen(5000, () => {
     console.log('Backend')
 })
