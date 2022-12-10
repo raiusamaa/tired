@@ -26,7 +26,7 @@ const eventSchema = new mongoose.Schema ({
     starts: {
         type: Number
     },
-    username: {
+    createdBy: {
         type: String
     }
     // communityRef:{

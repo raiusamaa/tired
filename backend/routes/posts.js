@@ -1,6 +1,5 @@
 import Express from 'express';
 import Post from '../models/post.js';
-import multer from 'multer';
 const router = Express.Router();
 //create
 
