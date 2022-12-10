@@ -33,13 +33,8 @@ export default function Post({ post }) {
         </div>
 
         <div className="postCenter">
-<<<<<<< HEAD
-          <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.photo} />
-=======
           <span className="postText">{post?.description}</span>
           <img className="postImg" src={post.img} />
->>>>>>> ce5203610ce8e97312115c6baf6620edcd8d2e92
         </div>
 
         <div className="postBottom">
