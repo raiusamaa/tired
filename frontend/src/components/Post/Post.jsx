@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './post.css';
-import Axios from 'axios';
 import { Users } from '../../dummyData';
 import { useState } from 'react';
 export default function Post({ post }) {
+<<<<<<< HEAD
   const onSubmit = (e) => {
     e.preventDefault();
   };
@@ -23,6 +23,16 @@ export default function Post({ post }) {
   //   };
   //   fetchdata();
 
+=======
+async function getData() 
+{
+  const myData=await Axios.get ('http://localhost:5000/api/posts');
+  //const response=myData.json();
+  const response=
+  console.log(myData['data'][0].username);
+}
+  getData();
+>>>>>>> b5e443a89a589d6ce0367e06c1b90ad3be0cef9a
   return (
     <div className="post">
       <div className="postWrapper">
@@ -45,18 +55,23 @@ export default function Post({ post }) {
         </div>
 
         <div className="postCenter">
+<<<<<<< HEAD
           {/* <span className="postText">{posts?.desc}</span>
           <img className="postImg" src={posts.photo} /> */}
+=======
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={post.photo} />
+>>>>>>> b5e443a89a589d6ce0367e06c1b90ad3be0cef9a
         </div>
 
         <div className="postBottom">
           <div className="postBottomLeft">
             <img className="likeIcon" src="/assets/heart.png" />
             <img className="likeIcon" src="/assets/like.png" />
-            {/* <span className="postLikeCounter">{post.like} people like it</span> */}
+            <span className="postLikeCounter">{post.like} people like it</span>
           </div>
           <div className="postBottomRight">
-            {/* <span className="postCommentText">{post.comment} comments</span> */}
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </div>
       </div>
