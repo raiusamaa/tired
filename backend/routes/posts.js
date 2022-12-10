@@ -1,6 +1,7 @@
 import Express from 'express';
 import Post from '../models/post.js';
 import multer from 'multer';
+import Posts from '../models/post.js';
 const router = Express.Router();
 
 // const storage= multer.diskStorage( {
@@ -110,7 +111,7 @@ router.get('/timeline/all', async (req, res) => {
 
 // router.get('/posts/get', (req,res) =>
 // {
-//     postSchema.find((err,data) => {
+//     Post.find((err,data) => {
 //         if(err)
 //         {
 //             res.status(500).send(err)
@@ -121,12 +122,12 @@ router.get('/timeline/all', async (req, res) => {
 //     });
 // })
 
-router.get('/', (req, res) => {
-  Post.find({}).then(
-    items => res.json(items))
-    .catch((err) => console.log(err));
+// router.get('/', (req, res) => {
+//   postSchema.find({}).then(
+//     items => res.json(items))
+//     .catch((err) => console.log(err));
 
-});
+// });
 
 
 

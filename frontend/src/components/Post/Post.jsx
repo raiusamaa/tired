@@ -6,15 +6,28 @@ import { useState } from 'react';
 export default function Post({ post }) {
   const onSubmit = (e) => {
     e.preventDefault();
+
   };
+  // const getData = async () => await Axios.post('http://localhost:5000/api/users/email');
+  // const response = getData.json();
+  // console.log(response);
+  
   const [posts, setPosts] = useState('');
   useEffect(() => {
-    const fetchdata = async () => {
-      const data = await Axios.get('http://localhost:5000/api/posts/get');
-      setPosts(data);
+
+    const fetchdata = async () => await Axios.get ('http://localhost:5000/api/posts');
+    console.log(fetchdata.data);
+  
+    // const fetchdata = async () => {
+    //   const data = await Axios.get('http://localhost:5000/api/posts/');
+    //   setPosts(data);
     };
     fetchdata();
-  }, []);
+
+
+  
+
+
   return (
     <div className="post">
       <div className="postWrapper">

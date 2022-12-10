@@ -33,7 +33,7 @@ app.get("/",(req,res) => {
 
 // app.get('/posts/get', (req,res) =>
 // {
-//     postSchema.find((err,data) => {
+//     Posts.find((err,data) => {
 //         if(err)
 //         {
 //             res.status(500).send(err)
