@@ -55,7 +55,7 @@ const Share = () =>  {
      <div className="share">
        <div className="shareWrapper">
          <div className="shareTop">
-           <img className="shareProfileImg" src="/assets/mee.jpeg" />
+           <i class="fa fa-user-circle-o fa-2x" id="userIcon"></i>
            <input
              value={description}
              type="text"
@@ -63,10 +63,15 @@ const Share = () =>  {
              className="shareInput"
              onChange={(e) => setDescription(e.target.value)}/>
          </div>
-         <input type="file" className="chooseFile" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
+        
+         <input type="file" className="choosePostFile" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
       </div>
+      
       </div>
-      <button onClick={uploadImg}>Submit</button>
+      {/* <i class="fa fa-music fa-1x" ></i>
+      
+      <i class="fa fa-camera fa-1x" ></i> */}
+      <button  id='submitButton'  onClick={uploadImg}>Submit</button>
     </form>
   )
 }
