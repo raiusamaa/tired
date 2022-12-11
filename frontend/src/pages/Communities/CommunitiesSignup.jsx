@@ -55,7 +55,15 @@ const CommunitiesSignup = () => {
         <label htmlFor="name" id="comName"> Name </label>
         <input value={name} type="name"id="comname" onChange={(e) => setName(e.target.value)}/>
 
-        <label htmlFor="Profession" id="comProfession">Profession</label>
+        <label htmlFor="Profession" id="comProfession">Profile Type</label>
+        
+        <div className="typeOfProf">
+       
+        <p>NGO</p>
+        <p>Organization</p>
+        <p>Institue</p>
+        
+        </div>
         
         {/* <div class="dropdown">
           <button className='commDropButton'>Hello</button>

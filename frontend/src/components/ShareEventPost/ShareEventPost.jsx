@@ -13,7 +13,9 @@ export default function ShareEventPost({event}) {
                 <div className="shareeventPostTopLeft">
                 <i class="fa fa-user-circle-o fa-2x" id="usernameIcon"></i>
                 <span className="postUsername">{event.createdBy}</span>
+                
                 <span className="postDate">{event.date}</span>
+
                 </div>
 
                 <div className="shareeventPostTopRight">
@@ -35,13 +37,15 @@ export default function ShareEventPost({event}) {
         {/* Bottom */}
         <div className="shareeventPostBottom">
           <div className="shareeventPostBottomLeft">
-          <img className="likeIcon" src="/assets/heart.png" />
-            <img className="likeIcon" src="/assets/like.png" />
-            {/* <span className="postLikeCounter">{event.like} people like it</span> */}
+          <i class="fa fa-heart fa-2x" id="likeIcon"></i>
+          <i class="fa fa-comment fa-2x" id="commentIcon"></i>
+    
+            <i class="fa fa-smile-o fa-2x" id="smileIcon"></i>
+           
 
           </div>
           <div className="shareeventPostBottomRight">
-          {/* <span className="postCommentText">{event.comment} comments</span> */}
+          <span className="postCommentText">comments</span>
           </div>
         </div>
 

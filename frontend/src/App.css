@@ -120,7 +120,7 @@ input[type='radio'] {
   margin-top: 5px;
   position: relative;
   bottom: 89px;
-  right: 72px;
+  
 }
 #name:hover {
   background-color: rgb(141, 195, 240);
@@ -140,7 +140,7 @@ input[type='radio'] {
   margin-top: 5px;
   position: relative;
   bottom: 89px;
-  right: 39px;
+ 
 }
 #profession:hover {
   background-color: rgb(141, 195, 240);
@@ -218,7 +218,7 @@ input[type='radio'] {
   margin-top: 5px;
   position: relative;
   bottom: 35px;
-  right: 25px;
+ 
 }
 #relationship:hover {
   background-color: rgb(141, 195, 240);
