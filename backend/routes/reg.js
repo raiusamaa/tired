@@ -51,4 +51,22 @@ router.patch('/updateHobby', async (req,res) => {
       res.send(currentUser)
 });
 
+
+router.post('/registerC', async (req,res) => {
+    const user= new users ({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        profession: req.body.profession,
+    });
+
+    try {
+        const newUser= await user.save();
+        res.send(200).json(newUser)
+    }
+    catch (err) {
+        console.log (err)
+    }
+})
+
 export default router

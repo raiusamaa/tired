@@ -4,7 +4,8 @@ const userSchema = new mongoose.Schema ({
         type: String
     },
     username: {
-        type: String
+        type: String,
+        default: "username@vet.com"
     },
     email : {
         type: String,
@@ -17,13 +18,16 @@ const userSchema = new mongoose.Schema ({
         type: String
     },
     city: {
-        type: String
+        type: String,
+        default: "Islamabad"
     },
     hobbies: {
         type: String,
+        default: "Reading"
     },
     relationship: {
-        type: String
+        type: String,
+        default: "Single"
     },
     profilePic: {
         type: String,

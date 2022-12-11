@@ -19,18 +19,16 @@ const CommunitiesSignup = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = Axios.post('http://localhost:5000/api/auth/register', {
+      const { data } = Axios.post('http://localhost:5000/api/auth/registerC', {
         email,
         password,
         profession,
-        name,
-        typeofprofile,
+        name
       });
 
       localStorage.setItem('user', JSON.stringify(data));
 
-      navigate('/CommunitiesSignup');
-      navigate('/VeteranSignup');
+      navigate('/Login');
     } catch (err) {
       console.log(err);
       alert('Something Went Wrong!');
@@ -65,7 +63,7 @@ const CommunitiesSignup = () => {
 
         
 
-        <button onClick={() => navigate('/Login')} id="SignupButton">
+        <button onClick={submitHandler} id="SignupButton">
           Signup
         </button>
 
