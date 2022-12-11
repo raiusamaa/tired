@@ -37,16 +37,21 @@ export default function EditProfile() {
         <div className="profileWrapper">
             <h1 className="title">Profile</h1>
             <div className='UpdateForm'>
-            <label htmlFor='name'>Name</label>
+            <h2  id='editHobbies'> Edit Your Profile</h2>
+            <label  id='labelName'  htmlFor='name'>Name</label>
+            <input type="hobbies" id="nam"/>
             <br></br>
-            <label htmlFor='profession'>Profession</label>
+            <label  id='labelProf'  htmlFor='profession'>Profession</label>
+            <input type="hobbies" id="prof"/>
             <br></br>
-            <label htmlFor='relationship'>Relationship</label>
+            <label  id='lebleRelation' htmlFor='relationship'>Relationship</label>
+            <input type="hobbies" id="relation"/>
             <br></br>
-            <h2> Edit Hobbies</h2>
-            <br></br>
-            <label htmlFor='hobbies'>Hobbies</label>
+            
+           
+            <label  id='labelHobbies' htmlFor='hobbies'>Hobbies</label>
             <input type="hobbies" id="hobbies"/>
+              <br></br>
               <br></br>
             <button 
             className="saveChanges">Save Changes</button>

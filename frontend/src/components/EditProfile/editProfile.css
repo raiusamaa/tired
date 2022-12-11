@@ -1,3 +1,7 @@
+*
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .Profile
 {
    flex: 5;
@@ -12,30 +16,54 @@
     color: rgb(5, 93, 122);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#name
+
+#labelHobbies
 {
-    margin-left: 70px;
-    margin-bottom: 15px;
+   
+   position: relative;
+   top:-0px;
 }
-#profession
-{
-    margin-left: 38px;
-    margin-bottom: 15px;
-}
-#relationship
-{
-    margin-left:25px;
-}
+
 #hobbies
 {
-    margin-left: 50px;
+    margin-left: 43px;
     margin-bottom: 15px;
-    width: 200px;
+    width: 250px;
     background-color: rgb(214, 225, 234);
     height: 30px;
     border: none;
     border-radius: 10px;
 
+}
+#nam
+{
+    margin-left: 60px;
+    margin-bottom: 15px;
+    width: 250px;
+    background-color: rgb(214, 225, 234);
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+#prof
+{
+    margin-left: 27px;
+    margin-bottom: 15px;
+    width: 250px;
+    background-color: rgb(214, 225, 234);
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+#relation
+{
+    margin-left: 14px;
+    margin-bottom: 15px;
+    width: 250px;
+    background-color: rgb(214, 225, 234);
+    height: 30px;
+    border: none;
+    border-radius: 10px;
 }
 .saveChanges
 {

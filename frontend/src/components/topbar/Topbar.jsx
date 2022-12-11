@@ -1,7 +1,10 @@
 import "./topbar.css"
 import {useNavigate } from 'react-router-dom';
 
-export default function Topbar(props) {
+export default function Topbar() {
+
+
+
   const navigate=useNavigate()
   const submitHandler = async (e) =>
   {
