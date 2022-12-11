@@ -56,45 +56,8 @@ const CommunitiesSignup = () => {
         <input value={name} type="name"id="comname" onChange={(e) => setName(e.target.value)}/>
 
         <label htmlFor="Profession" id="comProfession">Profile Type</label>
-        
-        <div className="typeOfProf">
+        <input value={name} type="name"id="comprofession" onChange={(e) => setProff(e.target.value)}/>
        
-        <p>NGO</p>
-        <p>Organization</p>
-        <p>Institue</p>
-        
-        </div>
-        
-        {/* <div class="dropdown">
-          <button className='commDropButton'>Hello</button>
-          <div class="dropdown-content">
-            <Link to="#">Yes</Link>
-           
-          </div>
-          </div> */}
-       
-        {/* <div className="slide-controls" id='commRadio'>
-           
-           <input  type="radio" name="slide" id="login"  />
-           <input  type="radio" name="slide" id="signup" checked/>
-           <input  type="radio" name="slide" id="signup" checked/>
-           <label for="login" class="slide login">Institue</label>
-           <label for="signup" class="slide signup">Organization</label>
-           <label for="signup" class="slide signup">NGO</label>
-           <div class="slider-tab">
- 
-           </div>
-         </div> */}
-
-
-
-
-
-
-
-
-
-
         <label htmlFor="email" id="comEmail"> Email</label> 
         <input value={email} type="email"id="comemail" onChange={(e) => setEmail(e.target.value)}/>
         <label htmlFor="password" id="comPassword">Password</label>
