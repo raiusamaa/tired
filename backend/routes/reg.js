@@ -42,13 +42,13 @@ router.patch('/updateHobby', async (req,res) => {
     const currentUser=await users.updateOne({email:req.body.email}, {
         $set:{
           name:req.body.name,
-          city:req.body.city,
           relationship:req.body.relationship,
           hobbies:req.body.hobbies,
           profession:req.body.profession
         }
+        
       })
-    res.send(currentUser.name);
+      res.send(currentUser)
 });
 
 export default router
